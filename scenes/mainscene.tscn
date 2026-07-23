@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmjykoiwq7s6d"]
+
+[ext_resource type="PackedScene" uid="uid://cabmdlahw5det" path="res://scenes/Sunglassesjoey.tscn" id="1_wtdyi"]
+[ext_resource type="Texture2D" uid="uid://bu56l8f3qfs4w" path="res://Sprites/enm1placeholder1.png" id="2_golqe"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_golqe"]
+
+[node name="Mainscene" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_wtdyi")]
+position = Vector2(0, -2)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(0, 1)
+zoom = Vector2(1.5, 1.5)
+rotation_smoothing_enabled = true
+
+[node name="Enm1Placeholder1" type="Sprite2D" parent="."]
+position = Vector2(-177, 24)
+texture = ExtResource("2_golqe")
+
+[node name="Enm1Placeholder2" type="Sprite2D" parent="."]
+position = Vector2(91, -107)
+texture = ExtResource("2_golqe")
+
+[node name="Enm1Placeholder2" type="Sprite2D" parent="Enm1Placeholder2"]
+position = Vector2(-662, 47)
+texture = ExtResource("2_golqe")
+
+[node name="Enm1Placeholder2" type="Sprite2D" parent="Enm1Placeholder2/Enm1Placeholder2"]
+position = Vector2(415, -201)
+texture = ExtResource("2_golqe")
+
+[node name="Enm1Placeholder2" type="Sprite2D" parent="Enm1Placeholder2/Enm1Placeholder2/Enm1Placeholder2"]
+position = Vector2(644, 214)
+texture = ExtResource("2_golqe")
+
+[node name="Enm1Placeholder3" type="Sprite2D" parent="."]
+position = Vector2(136, 103)
+texture = ExtResource("2_golqe")
+
+[node name="Enm1Placeholder4" type="Sprite2D" parent="."]
+position = Vector2(-134, 293)
+texture = ExtResource("2_golqe")
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries"]
+rotation = 3.1414392
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D"]
+position = Vector2(0, 371)
+shape = SubResource("WorldBoundaryShape2D_golqe")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(-245.00003, 0)
+rotation = 1.5702587
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D2"]
+position = Vector2(0, 371)
+shape = SubResource("WorldBoundaryShape2D_golqe")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Boundaries"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D4"]
+position = Vector2(0, 371)
+shape = SubResource("WorldBoundaryShape2D_golqe")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(226, 1.0000002)
+rotation = -1.5734545
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D3"]
+position = Vector2(0, 371)
+shape = SubResource("WorldBoundaryShape2D_golqe")

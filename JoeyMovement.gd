@@ -5,8 +5,8 @@ func _process(delta):
 	var gun_position = Vector2(1, 1)
 	var angle_to_mouse = gun_position.angle_to_point(get_local_mouse_position())
 	var usable_angle = rad_to_deg(angle_to_mouse)
-	var final_vector = Vector2.from_angle(angle_to_mouse) * 100   
-	$CollisionShape2D.position = final_vector
+	var final_vector = Vector2.from_angle(angle_to_mouse) * 50   
+	$Fuckingcirlce.position = final_vector
 	$Label.text = str(usable_angle)
 	
 	

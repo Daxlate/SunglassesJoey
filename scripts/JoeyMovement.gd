@@ -8,7 +8,7 @@ func _process(delta):
 	var gun_position = Vector2(1, 1)
 	var angle_to_mouse = gun_position.angle_to_point(get_local_mouse_position())
 	var usable_angle = rad_to_deg(angle_to_mouse)
-	var final_vector = Vector2.from_angle(angle_to_mouse) * 50   
+	var final_vector = Vector2.from_angle(angle_to_mouse) * 40   
 	$Crosshair.position = final_vector
 	if (Input.is_action_just_pressed("shoot") && cooldown == false):
 		print("bombam")

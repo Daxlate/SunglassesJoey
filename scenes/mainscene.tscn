@@ -55,45 +55,6 @@ shape = SubResource("WorldBoundaryShape2D_golqe")
 [node name="BasicGoon7" parent="enemies" unique_id=260915355 instance=ExtResource("3_nx3wj")]
 position = Vector2(-355, -125)
 
-[node name="BasicGoon8" parent="enemies" unique_id=1709093062 instance=ExtResource("3_nx3wj")]
-position = Vector2(-304, -114)
-
-[node name="RangedGoon7" parent="enemies" unique_id=78784907 instance=ExtResource("2_nx3wj")]
-position = Vector2(-337, 128)
-
-[node name="RangedGoon8" parent="enemies" unique_id=341792417 instance=ExtResource("2_nx3wj")]
-position = Vector2(-390, 122)
-
-[node name="BasicGoon5" parent="enemies" unique_id=1561671155 instance=ExtResource("3_nx3wj")]
-position = Vector2(343, -147)
-
-[node name="BasicGoon6" parent="enemies" unique_id=460568539 instance=ExtResource("3_nx3wj")]
-position = Vector2(394, -136)
-
-[node name="RangedGoon5" parent="enemies" unique_id=1382173025 instance=ExtResource("2_nx3wj")]
-position = Vector2(361, 106)
-
-[node name="RangedGoon6" parent="enemies" unique_id=507661505 instance=ExtResource("2_nx3wj")]
-position = Vector2(308, 100)
-
-[node name="BasicGoon3" parent="enemies" unique_id=60038929 instance=ExtResource("3_nx3wj")]
-position = Vector2(-44, -263)
-
-[node name="BasicGoon4" parent="enemies" unique_id=172670430 instance=ExtResource("3_nx3wj")]
-position = Vector2(157, -267)
-
-[node name="RangedGoon3" parent="enemies" unique_id=885270258 instance=ExtResource("2_nx3wj")]
-position = Vector2(179, 102)
-
-[node name="RangedGoon4" parent="enemies" unique_id=1906651154 instance=ExtResource("2_nx3wj")]
-position = Vector2(16, 0)
-
-[node name="BasicGoon" parent="enemies" unique_id=2005530833 instance=ExtResource("3_nx3wj")]
-position = Vector2(-79, -173)
-
-[node name="BasicGoon2" parent="enemies" unique_id=1088482388 instance=ExtResource("3_nx3wj")]
-position = Vector2(195, -57)
-
 [node name="RangedGoon2" parent="enemies" unique_id=932504312 instance=ExtResource("2_nx3wj")]
 position = Vector2(75, 236)
 

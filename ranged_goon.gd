@@ -18,6 +18,6 @@ func _physics_process(delta):
 			
 	if free_to_move:
 		var direction = global_position.direction_to(player.global_position)
-		velocity = direction * 85
+		velocity = direction * 55
 
 	move_and_slide()

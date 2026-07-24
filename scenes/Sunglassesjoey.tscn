@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b2opxkkf3uli" path="res://scenes/crosshair.tscn" id="4_g85nd"]
 [ext_resource type="Texture2D" uid="uid://cbycfjthsdjys" path="res://Sprites/SJplaceholderpunch2.png" id="4_hyixy"]
 [ext_resource type="Script" uid="uid://bu83am4sqx32w" path="res://scripts/label.gd" id="6_hyixy"]
-[ext_resource type="Script" path="res://area_2d.gd" id="8_v6x7x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vvpy"]
 atlas = ExtResource("2_lc3ti")
@@ -97,7 +96,6 @@ debug_color = Color(0.5936958, 0.53912836, 0.24250558, 0.05490196)
 
 [node name="Crosshair" parent="." unique_id=409720773 instance=ExtResource("4_g85nd")]
 collision_mask = 66
-script = ExtResource("8_v6x7x")
 
 [node name="Marker2D" type="Marker2D" parent="Crosshair" unique_id=777269550]
 

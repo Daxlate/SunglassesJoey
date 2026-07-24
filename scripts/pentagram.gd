@@ -4,12 +4,15 @@ var State = 0
 func _process(delta):
 	%PentagramFloor.position = global_position
 	var OverlappingBody = get_overlapping_bodies()
+	$LadyD.visible = false
 	if OverlappingBody.size() > 0:
-		if (Input.is_action_pressed("shoot") && State == 1):
-			TurnOff()
-			$Timer.start()
-			$Label.text = "asd"
-		pass
+		if (State == 1):
+			$LadyD.visible = true
+			$LadyD/AnimatedSprite2D.play("LadyD")
+			if Input.is_action_pressed("shoot"):
+				TurnOff()
+				$Timer.start()
+				$Label.text = "asd"
 
 func _on_timer_timeout():
 	$Label.text = "yippe"

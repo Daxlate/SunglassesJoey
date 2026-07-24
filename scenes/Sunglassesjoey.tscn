@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cabmdlahw5det"]
 
-[ext_resource type="Script" uid="uid://cawhwtmnvutyo" path="res://JoeyMovement.gd" id="1_lc3ti"]
+[ext_resource type="Script" uid="uid://cawhwtmnvutyo" path="res://scripts/JoeyMovement.gd" id="1_lc3ti"]
 [ext_resource type="Texture2D" uid="uid://dlqna42146gfm" path="res://Sprites/SJplaceholder.png" id="2_lc3ti"]
 [ext_resource type="Texture2D" uid="uid://mpwc4ad4qgys" path="res://Sprites/SJplaceholderpunch1.png" id="3_7aqps"]
 [ext_resource type="Texture2D" uid="uid://cmcgv2n3aafml" path="res://Sprites/SJplaceholder2.png" id="3_g85nd"]
@@ -101,3 +101,5 @@ collision_mask = 66
 
 [node name="Timer" type="Timer" parent="." unique_id=1481797899]
 wait_time = 0.4
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://7c15euqreqib"]
+[gd_scene format=3 uid="uid://7c15euqreqib"]
 
 [ext_resource type="Texture2D" uid="uid://bu56l8f3qfs4w" path="res://Sprites/enm1placeholder1.png" id="1_tohd5"]
 [ext_resource type="Script" uid="uid://dqdu1ymmcwxtj" path="res://scenes/basic_goon.gd" id="1_wr2nn"]
@@ -21,7 +21,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3a3vp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -31,25 +31,25 @@ radius = 11.5
 height = 32.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wr2nn"]
-radius = 11.5
-height = 32.0
+radius = 17.0
+height = 42.0
 
-[node name="BasicGoon" type="CharacterBody2D"]
+[node name="BasicGoon" type="CharacterBody2D" unique_id=260915355]
 collision_layer = 2
-collision_mask = 0
+collision_mask = 10
 script = ExtResource("1_wr2nn")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1678201634]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_opb3r")
 frame_progress = 0.41474754
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=607695514]
 shape = SubResource("CapsuleShape2D_tohd5")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=583321854]
 collision_layer = 2
-collision_mask = 0
+collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=482809460]
 shape = SubResource("CapsuleShape2D_wr2nn")

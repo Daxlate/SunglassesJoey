@@ -1,47 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmjykoiwq7s6d"]
+[gd_scene load_steps=5 format=3 uid="uid://cmjykoiwq7s6d"]
 
 [ext_resource type="PackedScene" uid="uid://cabmdlahw5det" path="res://scenes/Sunglassesjoey.tscn" id="1_wtdyi"]
 [ext_resource type="Texture2D" uid="uid://bu56l8f3qfs4w" path="res://Sprites/enm1placeholder1.png" id="2_golqe"]
+[ext_resource type="PackedScene" uid="uid://7c15euqreqib" path="res://scenes/basic_goon.tscn" id="3_nx3wj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_golqe"]
 
 [node name="Mainscene" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_wtdyi")]
-position = Vector2(0, -2)
+[node name="Joey" parent="." instance=ExtResource("1_wtdyi")]
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Joey"]
 position = Vector2(0, 1)
 zoom = Vector2(1.5, 1.5)
 rotation_smoothing_enabled = true
-
-[node name="Enm1Placeholder1" type="Sprite2D" parent="."]
-position = Vector2(-177, 24)
-texture = ExtResource("2_golqe")
-
-[node name="Enm1Placeholder2" type="Sprite2D" parent="."]
-position = Vector2(91, -107)
-texture = ExtResource("2_golqe")
-
-[node name="Enm1Placeholder2" type="Sprite2D" parent="Enm1Placeholder2"]
-position = Vector2(-662, 47)
-texture = ExtResource("2_golqe")
-
-[node name="Enm1Placeholder2" type="Sprite2D" parent="Enm1Placeholder2/Enm1Placeholder2"]
-position = Vector2(415, -201)
-texture = ExtResource("2_golqe")
-
-[node name="Enm1Placeholder2" type="Sprite2D" parent="Enm1Placeholder2/Enm1Placeholder2/Enm1Placeholder2"]
-position = Vector2(644, 214)
-texture = ExtResource("2_golqe")
-
-[node name="Enm1Placeholder3" type="Sprite2D" parent="."]
-position = Vector2(136, 103)
-texture = ExtResource("2_golqe")
-
-[node name="Enm1Placeholder4" type="Sprite2D" parent="."]
-position = Vector2(-134, 293)
-texture = ExtResource("2_golqe")
 
 [node name="Boundaries" type="Node2D" parent="."]
 
@@ -77,3 +49,39 @@ collision_layer = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D3"]
 position = Vector2(0, 371)
 shape = SubResource("WorldBoundaryShape2D_golqe")
+
+[node name="BasicGoon" parent="." instance=ExtResource("3_nx3wj")]
+position = Vector2(-154, -122)
+
+[node name="BasicGoon2" parent="." instance=ExtResource("3_nx3wj")]
+position = Vector2(236, -62)
+
+[node name="enemies" type="Node" parent="."]
+
+[node name="Enm1Placeholder7" type="Sprite2D" parent="enemies"]
+position = Vector2(488, -47)
+texture = ExtResource("2_golqe")
+
+[node name="Enm1Placeholder2" type="Sprite2D" parent="enemies"]
+position = Vector2(91, -107)
+texture = ExtResource("2_golqe")
+
+[node name="Enm1Placeholder1" type="Sprite2D" parent="enemies"]
+position = Vector2(-177, 24)
+texture = ExtResource("2_golqe")
+
+[node name="Enm1Placeholder3" type="Sprite2D" parent="enemies"]
+position = Vector2(136, 103)
+texture = ExtResource("2_golqe")
+
+[node name="Enm1Placeholder4" type="Sprite2D" parent="enemies"]
+position = Vector2(-134, 293)
+texture = ExtResource("2_golqe")
+
+[node name="Enm1Placeholder5" type="Sprite2D" parent="enemies"]
+position = Vector2(-571, -60)
+texture = ExtResource("2_golqe")
+
+[node name="Enm1Placeholder6" type="Sprite2D" parent="enemies"]
+position = Vector2(-156, -261)
+texture = ExtResource("2_golqe")

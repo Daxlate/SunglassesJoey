@@ -1,12 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cabmdlahw5det"]
+[gd_scene load_steps=9 format=3 uid="uid://cabmdlahw5det"]
 
-[ext_resource type="Script" uid="uid://dj2fn1rgj5jgb" path="res://JoeyMovement.gd" id="1_lc3ti"]
+[ext_resource type="Script" uid="uid://befu45eqrn6rr" path="res://JoeyMovement.gd" id="1_lc3ti"]
 [ext_resource type="Texture2D" uid="uid://dlqna42146gfm" path="res://Sprites/SJplaceholder.png" id="2_lc3ti"]
 [ext_resource type="Texture2D" uid="uid://cmcgv2n3aafml" path="res://Sprites/SJplaceholder2.png" id="3_g85nd"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7aqps"]
-radius = 11.5
-height = 32.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vvpy"]
 atlas = ExtResource("2_lc3ti")
@@ -38,15 +34,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7aqps"]
+radius = 11.5
+height = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lc3ti"]
+radius = 23.409399
+
+[node name="Joey" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_lc3ti")
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_mask = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CapsuleShape2D_7aqps")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7rn7r")
@@ -58,3 +55,10 @@ offset_bottom = 23.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7aqps")
+
+[node name="MeleeHurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHurtbox"]
+shape = SubResource("CircleShape2D_lc3ti")

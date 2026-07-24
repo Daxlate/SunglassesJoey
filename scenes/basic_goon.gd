@@ -8,3 +8,5 @@ func _physics_process(delta):
 	velocity = direction * 70
 	move_and_slide()
 	
+func get_hurt():
+	pass

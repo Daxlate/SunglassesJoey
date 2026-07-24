@@ -1,6 +1,8 @@
 extends CharacterBody2D
 var is_punch = false
 var is_gun = false
+var speed = 150
+
 func _process(delta):
 	if Input.is_action_pressed("change_weapon"):
 		is_gun = !is_gun
@@ -23,7 +25,7 @@ func _process(delta):
 	
 func _physics_process(delta):
 	var direction = Input.get_vector("MoveLeft","MoveRight","MoveUp","MoveDown")
-	velocity = direction * 150
+	velocity = direction * speed
 	move_and_slide()
 	if is_punch:
 		Punchanim()

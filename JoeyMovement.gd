@@ -7,7 +7,7 @@ func _process(delta):
 	var usable_angle = rad_to_deg(angle_to_mouse)
 	var final_vector = Vector2.from_angle(angle_to_mouse) * 50   
 	$Crosshair.position = final_vector
-	$Label.text = str(usable_angle)
+	$Label.text = str(is_punch)
 	
 	
 func _physics_process(delta):
@@ -15,7 +15,7 @@ func _physics_process(delta):
 	velocity = direction * 300
 	move_and_slide()
 	if is_punch:
-		pass
+		Punchanim()
 	else:
 		if velocity.length() > 0.0:
 			Walkanim()

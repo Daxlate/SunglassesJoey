@@ -2,7 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://bu56l8f3qfs4w" path="res://Sprites/enm1placeholder1.png" id="1_tohd5"]
 [ext_resource type="Script" uid="uid://dqdu1ymmcwxtj" path="res://scenes/basic_goon.gd" id="1_wr2nn"]
+[ext_resource type="Texture2D" uid="uid://b2yief28cqv36" path="res://Sprites/enm1placeholderPunch1.png" id="2_nlbui"]
+[ext_resource type="Texture2D" uid="uid://buaeawtlmu2er" path="res://Sprites/enm1placeholderPunch2.png" id="3_hxk0q"]
 [ext_resource type="Texture2D" uid="uid://bmxkayl4u5mc0" path="res://Sprites/enm1placeholder2.png" id="3_opb3r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jng13"]
+atlas = ExtResource("2_nlbui")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuwdk"]
+atlas = ExtResource("3_hxk0q")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wr2nn"]
 atlas = ExtResource("1_tohd5")
@@ -14,6 +24,17 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_opb3r"]
 animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_jng13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuwdk")
+}],
+"loop": 1,
+"name": &"Punch",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wr2nn")
@@ -27,8 +48,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tohd5"]
-radius = 11.5
-height = 32.0
+radius = 15.0
+height = 40.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wr2nn"]
 radius = 17.0
@@ -42,14 +63,16 @@ script = ExtResource("1_wr2nn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1678201634]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_opb3r")
-frame_progress = 0.41474754
+autoplay = "default"
+frame_progress = 0.78736067
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=607695514]
 shape = SubResource("CapsuleShape2D_tohd5")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=583321854]
+[node name="hurtbox" type="Area2D" parent="." unique_id=583321854]
 collision_layer = 2
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=482809460]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=482809460]
 shape = SubResource("CapsuleShape2D_wr2nn")
+debug_color = Color(0.83137256, 0.3529412, 0.4627451, 0.32941177)

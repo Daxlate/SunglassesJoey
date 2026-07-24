@@ -50,16 +50,13 @@ collision_layer = 4
 position = Vector2(0, 371)
 shape = SubResource("WorldBoundaryShape2D_golqe")
 
-[node name="RangedGoon" parent="Boundaries" unique_id=78784907 instance=ExtResource("2_nx3wj")]
-position = Vector2(-224, 143)
-
-[node name="RangedGoon2" parent="Boundaries" unique_id=932504312 instance=ExtResource("2_nx3wj")]
-position = Vector2(172, 133)
-
 [node name="enemies" type="Node" parent="." unique_id=93335251]
 
-[node name="BasicGoon" parent="enemies" unique_id=2005530833 instance=ExtResource("3_nx3wj")]
-position = Vector2(-154, -122)
+[node name="BasicGoon7" parent="enemies" unique_id=260915355 instance=ExtResource("3_nx3wj")]
+position = Vector2(-355, -125)
 
-[node name="BasicGoon2" parent="enemies" unique_id=1088482388 instance=ExtResource("3_nx3wj")]
-position = Vector2(236, -62)
+[node name="RangedGoon2" parent="enemies" unique_id=932504312 instance=ExtResource("2_nx3wj")]
+position = Vector2(75, 236)
+
+[node name="RangedGoon" parent="enemies" unique_id=1259224582 instance=ExtResource("2_nx3wj")]
+position = Vector2(-172, 158)

@@ -168,6 +168,7 @@ animations = [{
 }]
 
 [node name="Pentagram" type="Area2D" unique_id=1269892955]
+collision_layer = 0
 script = ExtResource("1_lll41")
 
 [node name="ExtraEffects" type="AnimatedSprite2D" parent="." unique_id=509498160]
@@ -191,6 +192,7 @@ text = "asd"
 
 [node name="Timer" type="Timer" parent="." unique_id=829150403]
 wait_time = 5.0
+one_shot = true
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1931549005]
@@ -201,8 +203,11 @@ follow_viewport_enabled = true
 unique_name_in_owner = true
 position = Vector2(1, -12)
 sprite_frames = SubResource("SpriteFrames_u5bk5")
-animation = &"On"
+animation = &"Off"
+autoplay = "Off"
 
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]
 [connection signal="animation_finished" from="ExtraEffects" to="." method="_on_extra_effects_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="CanvasLayer/PentagramFloor" to="." method="_on_pentagram_floor_animation_finished"]

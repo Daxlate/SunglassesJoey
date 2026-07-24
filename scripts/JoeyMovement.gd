@@ -1,29 +1,34 @@
 extends CharacterBody2D
-
+var is_punch = false
+var is_gun = false
+var speed = 150
+var cooldown = false
 @onready var Crosshair = $Crosshair/Marker2D
 
-var is_punch = false
 func _process(delta):
-	var cooldown = false
+	
 	var gun_position = Vector2(1, 1)
 	var angle_to_mouse = gun_position.angle_to_point(get_local_mouse_position())
 	var usable_angle = rad_to_deg(angle_to_mouse)
-	var final_vector = Vector2.from_angle(angle_to_mouse) * 40   
+	var final_vector = Vector2.from_angle(angle_to_mouse) * 40
+	$Crosshair.scale = Vector2(0.3,0.3)
 	$Crosshair.position = final_vector
 	if (Input.is_action_just_pressed("shoot") && cooldown == false):
-		print("bombam")
+		cooldown = true
 		shoot(usable_angle)
-	
-func shoot(angle):
+		$Timer.start()
+
+func shoot(angle_radians):
 	const JOEYBULLET = preload("res://scenes/joey_bullet.tscn")
 	var new_bullet = JOEYBULLET.instantiate()
 	new_bullet.global_position = Crosshair.global_position
-	new_bullet.global_rotation = deg_to_rad(angle)
-	Crosshair.add_child(new_bullet)
+	new_bullet.global_rotation = deg_to_rad(angle_radians)
+	get_tree().current_scene.add_child(new_bullet)
+
 	
 func _physics_process(delta):
 	var direction = Input.get_vector("MoveLeft","MoveRight","MoveUp","MoveDown")
-	velocity = direction * 150
+	velocity = direction * speed
 	move_and_slide()
 	if is_punch:
 		Punchanim()
@@ -40,3 +45,8 @@ func Walkanim():
 func Punchanim():
 	$AnimatedSprite2D.play("punch")
 	
+
+
+func _on_timer_timeout() -> void:
+	print("timer finished, resetting cooldown")
+	cooldown = false

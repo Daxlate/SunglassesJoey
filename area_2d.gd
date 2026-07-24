@@ -9,7 +9,7 @@ func _process(delta):
 		$Fuckingcirlce.modulate = Color(255.014, 0.0, 0.0, 0.196)
 		if (Input.is_action_pressed("shoot") && cooldown == false):
 			cooldown = true
-			$Timer.start()
+			$Cooldownpunch.start()
 			joey.is_punch = true
 		if cooldown:
 			$Fuckingcirlce.modulate = Color(255.014, 255.014, 0.0, 0.196)

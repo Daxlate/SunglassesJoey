@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cmjykoiwq7s6d"]
 
 [ext_resource type="PackedScene" uid="uid://cabmdlahw5det" path="res://scenes/Sunglassesjoey.tscn" id="1_wtdyi"]
-[ext_resource type="Texture2D" uid="uid://bu56l8f3qfs4w" path="res://Sprites/enm1placeholder1.png" id="2_golqe"]
+[ext_resource type="PackedScene" uid="uid://b55np8d5iacbq" path="res://scenes/ranged_goon.tscn" id="2_nx3wj"]
 [ext_resource type="PackedScene" uid="uid://7c15euqreqib" path="res://scenes/basic_goon.tscn" id="3_nx3wj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_golqe"]
@@ -50,38 +50,16 @@ collision_layer = 4
 position = Vector2(0, 371)
 shape = SubResource("WorldBoundaryShape2D_golqe")
 
-[node name="BasicGoon" parent="." unique_id=2005530833 instance=ExtResource("3_nx3wj")]
-position = Vector2(-154, -122)
+[node name="RangedGoon" parent="Boundaries" unique_id=78784907 instance=ExtResource("2_nx3wj")]
+position = Vector2(-224, 143)
 
-[node name="BasicGoon2" parent="." unique_id=1088482388 instance=ExtResource("3_nx3wj")]
-position = Vector2(236, -62)
+[node name="RangedGoon2" parent="Boundaries" unique_id=932504312 instance=ExtResource("2_nx3wj")]
+position = Vector2(172, 133)
 
 [node name="enemies" type="Node" parent="." unique_id=93335251]
 
-[node name="Enm1Placeholder7" type="Sprite2D" parent="enemies" unique_id=1066775501]
-position = Vector2(488, -47)
-texture = ExtResource("2_golqe")
+[node name="BasicGoon" parent="enemies" unique_id=2005530833 instance=ExtResource("3_nx3wj")]
+position = Vector2(-154, -122)
 
-[node name="Enm1Placeholder2" type="Sprite2D" parent="enemies" unique_id=1241012568]
-position = Vector2(91, -107)
-texture = ExtResource("2_golqe")
-
-[node name="Enm1Placeholder1" type="Sprite2D" parent="enemies" unique_id=1040761487]
-position = Vector2(-177, 24)
-texture = ExtResource("2_golqe")
-
-[node name="Enm1Placeholder3" type="Sprite2D" parent="enemies" unique_id=202630427]
-position = Vector2(136, 103)
-texture = ExtResource("2_golqe")
-
-[node name="Enm1Placeholder4" type="Sprite2D" parent="enemies" unique_id=226496600]
-position = Vector2(-134, 293)
-texture = ExtResource("2_golqe")
-
-[node name="Enm1Placeholder5" type="Sprite2D" parent="enemies" unique_id=1111048276]
-position = Vector2(-571, -60)
-texture = ExtResource("2_golqe")
-
-[node name="Enm1Placeholder6" type="Sprite2D" parent="enemies" unique_id=409280525]
-position = Vector2(-156, -261)
-texture = ExtResource("2_golqe")
+[node name="BasicGoon2" parent="enemies" unique_id=1088482388 instance=ExtResource("3_nx3wj")]
+position = Vector2(236, -62)

@@ -55,8 +55,11 @@ height = 32.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_lc3ti"]
 radius = 23.409399
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_al4r6"]
+radius = 105.0
+
 [node name="Joey" type="CharacterBody2D" unique_id=1516984231]
-collision_mask = 6
+collision_mask = 4
 script = ExtResource("1_lc3ti")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2092795412]
@@ -71,13 +74,21 @@ offset_bottom = 23.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=683776314]
 shape = SubResource("CapsuleShape2D_7aqps")
 
-[node name="MeleeHurtbox" type="Area2D" parent="." unique_id=1230020256]
-collision_layer = 0
-collision_mask = 0
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1230020256]
+collision_layer = 8
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHurtbox" unique_id=644182706]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=644182706]
 shape = SubResource("CircleShape2D_lc3ti")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1206805745]
+
+[node name="RangedLimit" type="Area2D" parent="." unique_id=2037734062]
+collision_layer = 32
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangedLimit" unique_id=722765043]
+shape = SubResource("CircleShape2D_al4r6")
+debug_color = Color(0.5936958, 0.53912836, 0.24250558, 0.05490196)
 
 [node name="Crosshair" parent="." unique_id=409720773 instance=ExtResource("4_g85nd")]

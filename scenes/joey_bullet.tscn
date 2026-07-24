@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ba8y6ipr7bs8n"]
+
+[ext_resource type="Texture2D" uid="uid://dlo2686ko1pw4" path="res://Sprites/JoeyBullet.png" id="1_6t6j3"]
+[ext_resource type="Script" uid="uid://bev5jfdntmiia" path="res://scripts/joey_bullet.gd" id="1_y3ntl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_al4r6"]
+radius = 4.0
+
+[node name="JoeyBullet" type="Area2D" unique_id=1241587801]
+top_level = true
+scale = Vector2(1.6400001, 1.6400001)
+collision_layer = 0
+collision_mask = 66
+script = ExtResource("1_y3ntl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1792104406]
+shape = SubResource("CircleShape2D_al4r6")
+
+[node name="JoeyBullet" type="Sprite2D" parent="." unique_id=2142832566]
+position = Vector2(-2, 0)
+texture = ExtResource("1_6t6j3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -7,7 +7,7 @@ func _process(delta):
 	var enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() > 0:
 		$Fuckingcirlce.modulate = Color(255.014, 0.0, 0.0, 0.196)
-		if (Input.is_action_pressed("shoot") && cooldown == false):
+		if (Input.is_action_pressed("punch") && cooldown == false):
 			cooldown = true
 			$Cooldownpunch.start()
 			joey.is_punch = true

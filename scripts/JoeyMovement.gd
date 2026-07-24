@@ -1,26 +1,42 @@
 extends CharacterBody2D
 
+@onready var Crosshair = $Crosshair/Marker2D
+
+var is_punch = false
 func _process(delta):
-	
+	var cooldown = false
 	var gun_position = Vector2(1, 1)
 	var angle_to_mouse = gun_position.angle_to_point(get_local_mouse_position())
 	var usable_angle = rad_to_deg(angle_to_mouse)
-	var final_vector = Vector2.from_angle(angle_to_mouse) * 100   
-	$Area2D/CollisionShape2D.position = final_vector
-	$Label.text = str(usable_angle)
+	var final_vector = Vector2.from_angle(angle_to_mouse) * 50   
+	$Crosshair.position = final_vector
+	if (Input.is_action_just_pressed("shoot") && cooldown == false):
+		print("bombam")
+		shoot(usable_angle)
 	
+func shoot(angle):
+	const JOEYBULLET = preload("res://scenes/joey_bullet.tscn")
+	var new_bullet = JOEYBULLET.instantiate()
+	new_bullet.global_position = Crosshair.global_position
+	new_bullet.global_rotation = deg_to_rad(angle)
+	Crosshair.add_child(new_bullet)
 	
 func _physics_process(delta):
 	var direction = Input.get_vector("MoveLeft","MoveRight","MoveUp","MoveDown")
-	velocity = direction * 300
+	velocity = direction * 150
 	move_and_slide()
-	if velocity.length() > 0.0:
-		Walkanim()
+	if is_punch:
+		Punchanim()
 	else:
-		Idleanim()
+		if velocity.length() > 0.0:
+			Walkanim()
+		else:
+			Idleanim()
 	
 func Idleanim():
 	$AnimatedSprite2D.play("default")
 func Walkanim():
 	$AnimatedSprite2D.play("walk")
+func Punchanim():
+	$AnimatedSprite2D.play("punch")
 	

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cabmdlahw5det"]
 
-[ext_resource type="Script" uid="uid://befu45eqrn6rr" path="res://JoeyMovement.gd" id="1_lc3ti"]
+[ext_resource type="Script" uid="uid://befu45eqrn6rr" path="res://scripts/JoeyMovement.gd" id="1_lc3ti"]
 [ext_resource type="Texture2D" uid="uid://dlqna42146gfm" path="res://Sprites/SJplaceholder.png" id="2_lc3ti"]
 [ext_resource type="Texture2D" uid="uid://mpwc4ad4qgys" path="res://Sprites/SJplaceholderpunch1.png" id="3_7aqps"]
 [ext_resource type="Texture2D" uid="uid://cmcgv2n3aafml" path="res://Sprites/SJplaceholder2.png" id="3_g85nd"]
 [ext_resource type="PackedScene" uid="uid://b2opxkkf3uli" path="res://scenes/crosshair.tscn" id="4_g85nd"]
 [ext_resource type="Texture2D" uid="uid://cbycfjthsdjys" path="res://Sprites/SJplaceholderpunch2.png" id="4_hyixy"]
-[ext_resource type="Script" uid="uid://bu83am4sqx32w" path="res://scenes/label.gd" id="6_hyixy"]
+[ext_resource type="Script" uid="uid://bu83am4sqx32w" path="res://scripts/label.gd" id="6_hyixy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vvpy"]
 atlas = ExtResource("2_lc3ti")
@@ -85,18 +85,19 @@ shape = SubResource("CircleShape2D_lc3ti")
 debug_color = Color(0.8429022, 0.33647904, 0.47380036, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1206805745]
-visible = false
 
 [node name="RangedLimit" type="Area2D" parent="." unique_id=2037734062]
-visible = false
 collision_layer = 32
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangedLimit" unique_id=722765043]
-visible = false
 shape = SubResource("CircleShape2D_al4r6")
 debug_color = Color(0.5936958, 0.53912836, 0.24250558, 0.05490196)
 
 [node name="Crosshair" parent="." unique_id=409720773 instance=ExtResource("4_g85nd")]
-visible = false
 collision_mask = 66
+
+[node name="Marker2D" type="Marker2D" parent="Crosshair" unique_id=777269550]
+
+[node name="Timer" type="Timer" parent="." unique_id=1481797899]
+wait_time = 0.4

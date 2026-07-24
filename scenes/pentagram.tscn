@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cf4x57mead76h"]
 
-[ext_resource type="Script" uid="uid://hjhxydxn6biq" path="res://scenes/pentagram.gd" id="1_lll41"]
+[ext_resource type="Script" uid="uid://hjhxydxn6biq" path="res://scripts/pentagram.gd" id="1_lll41"]
 [ext_resource type="Texture2D" uid="uid://b8xab02306oes" path="res://Sprites/Pentagram-Sheet.png" id="1_q67eb"]
 [ext_resource type="Texture2D" uid="uid://b0rtaj8tngja1" path="res://Sprites/Pentagram-Sheet4.png" id="2_7rtp2"]
 [ext_resource type="Texture2D" uid="uid://dlywpl0nm0gcb" path="res://Sprites/Pentagram-Sheet1.png" id="3_lph2h"]

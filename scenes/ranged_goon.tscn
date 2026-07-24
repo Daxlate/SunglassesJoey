@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b55np8d5iacbq"]
 
-[ext_resource type="Script" uid="uid://2gvbi540gt0b" path="res://ranged_goon.gd" id="1_hh6sc"]
+[ext_resource type="Script" uid="uid://2gvbi540gt0b" path="res://scripts/ranged_goon.gd" id="1_hh6sc"]
 [ext_resource type="Texture2D" uid="uid://bhxtahkd3dqlu" path="res://Sprites/enm1placeholderGun1.png" id="2_ducqr"]
 [ext_resource type="Texture2D" uid="uid://dbnvo7jvsjaqo" path="res://Sprites/enm1placeholderGun2.png" id="3_mjjxf"]
 

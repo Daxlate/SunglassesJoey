@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b2opxkkf3uli"]
 
-[ext_resource type="Script" uid="uid://b273ldh6gx6do" path="res://area_2d.gd" id="1_norqy"]
+[ext_resource type="Script" uid="uid://b273ldh6gx6do" path="res://scripts/area_2d.gd" id="1_norqy"]
 [ext_resource type="Texture2D" uid="uid://bvwh1j3h3s6hh" path="res://Sprites/fuckingcirlce.png" id="2_qnjby"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u5bk5"]

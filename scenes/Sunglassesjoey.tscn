@@ -85,7 +85,7 @@ shape = SubResource("CircleShape2D_lc3ti")
 
 [node name="RangedLimit" type="Area2D" parent="." unique_id=2037734062]
 collision_layer = 32
-collision_mask = 2
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangedLimit" unique_id=722765043]
 shape = SubResource("CircleShape2D_al4r6")

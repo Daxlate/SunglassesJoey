@@ -9,5 +9,5 @@ y_sort_enabled = true
 [node name="Joey" parent="." unique_id=1516984231 instance=ExtResource("1_t5vf3")]
 position = Vector2(503, 304)
 
-[node name="Pentagram" parent="." unique_id=1269892955 instance=ExtResource("2_dxfed")]
-position = Vector2(288, 300)
+[node name="Pentagram2" parent="." unique_id=1269892955 instance=ExtResource("2_dxfed")]
+position = Vector2(201, 374)

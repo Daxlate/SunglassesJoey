@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv0md4aftfur2"
-path="res://.godot/imported/UpgradeIconDash.png-4e973422ece035e4c419dc7cf2cd099b.ctex"
+path="res://.godot/imported/UpgradeIcon1.png-a84cdeff9341c68aa9e584aed37a97b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UpgradesIcon/UpgradeIconDash.png"
-dest_files=["res://.godot/imported/UpgradeIconDash.png-4e973422ece035e4c419dc7cf2cd099b.ctex"]
+source_file="res://Sprites/UpgradesIcon/UpgradeIcon1.png"
+dest_files=["res://.godot/imported/UpgradeIcon1.png-a84cdeff9341c68aa9e584aed37a97b2.ctex"]
 
 [params]
 

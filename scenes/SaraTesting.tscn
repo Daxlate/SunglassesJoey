@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bpxac706k05mf"]
+
+[ext_resource type="PackedScene" uid="uid://cabmdlahw5det" path="res://scenes/Sunglassesjoey.tscn" id="1_t5vf3"]
+[ext_resource type="PackedScene" uid="uid://cf4x57mead76h" path="res://scenes/pentagram.tscn" id="2_dxfed"]
+
+[node name="TestingScene" type="Node2D" unique_id=1567451545]
+y_sort_enabled = true
+
+[node name="Joey" parent="." unique_id=1516984231 instance=ExtResource("1_t5vf3")]
+position = Vector2(503, 304)
+
+[node name="Pentagram" parent="." unique_id=1269892955 instance=ExtResource("2_dxfed")]
+position = Vector2(288, 300)

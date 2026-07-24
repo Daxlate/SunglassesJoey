@@ -1,13 +1,18 @@
 extends Area2D
 var State = 0
+@onready var Upgrade = $Upgrade1
 
 func _process(delta):
 	%PentagramFloor.position = global_position
 	var OverlappingBody = get_overlapping_bodies()
 	$LadyD.visible = false
+	if (Upgrade != null):
+		Upgrade.disabled = true
 	if OverlappingBody.size() > 0:
 		if (State == 1):
 			$LadyD.visible = true
+			if (Upgrade != null):
+				Upgrade.disabled = false
 			$LadyD/AnimatedSprite2D.play("LadyD")
 			if Input.is_action_pressed("shoot"):
 				TurnOff()

@@ -13,17 +13,19 @@ wait_time = 3.0
 [node name="LadyD" parent="." index="5" unique_id=1703405707]
 visible = true
 
-[node name="Upgrade1" type="TextureButton" parent="LadyD" index="2" unique_id=597344761]
+[node name="Upgrade1" type="TextureButton" parent="." index="6" unique_id=597344761]
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 608.0
 offset_bottom = 320.0
 texture_normal = ExtResource("2_7efxm")
+texture_pressed = ExtResource("2_7efxm")
 texture_hover = ExtResource("2_7efxm")
+texture_focused = ExtResource("2_7efxm")
 stretch_mode = 0
 script = ExtResource("3_10ngd")
 
-[node name="UpgradeTitle1" type="Label" parent="LadyD/Upgrade1" index="0" unique_id=1969113491]
+[node name="UpgradeTitle1" type="Label" parent="Upgrade1" index="0" unique_id=1969113491]
 layout_mode = 0
 offset_left = 154.0
 offset_top = 62.0
@@ -33,7 +35,7 @@ theme_override_font_sizes/font_size = 22
 text = "Edit me daddy"
 uppercase = true
 
-[node name="UpgradeDesc1" type="RichTextLabel" parent="LadyD/Upgrade1" index="1" unique_id=1207365982]
+[node name="UpgradeDesc1" type="RichTextLabel" parent="Upgrade1" index="1" unique_id=1207365982]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 141.0
@@ -42,7 +44,7 @@ offset_bottom = 232.0
 theme_override_font_sizes/normal_font_size = 16
 text = "please for the love of god edit me i want nothing more in this existence than to be edited"
 
-[node name="UpgradeIcon1" type="Sprite2D" parent="LadyD/Upgrade1" index="2" unique_id=1657021687]
+[node name="UpgradeIcon1" type="Sprite2D" parent="Upgrade1" index="2" unique_id=1657021687]
 position = Vector2(80, 80)
 scale = Vector2(2, 2)
 texture = ExtResource("4_k5ok5")

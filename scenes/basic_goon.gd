@@ -11,14 +11,14 @@ func _physics_process(delta):
 		
 		if !in_punch_range:
 			in_punch_range = true
-			Punch_cooldown = 0.5
+			Punch_cooldown = 0.3
 		
 		Punch_cooldown -= delta
 		
 		if Punch_cooldown <= 0:
 			print("PUNCHED!")
 			punch_anim()
-			Punch_cooldown = 0.7
+			Punch_cooldown = 0.5
 			
 		
 	else:

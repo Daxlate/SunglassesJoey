@@ -66,7 +66,7 @@ script = ExtResource("1_lc3ti")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2092795412]
 sprite_frames = SubResource("SpriteFrames_7rn7r")
 animation = &"punch"
-frame_progress = 0.08260068
+frame_progress = 0.6557417
 
 [node name="Label" type="Label" parent="." unique_id=1842232647]
 offset_right = 40.0
@@ -82,16 +82,21 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=644182706]
 shape = SubResource("CircleShape2D_lc3ti")
+debug_color = Color(0.8429022, 0.33647904, 0.47380036, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1206805745]
+visible = false
 
 [node name="RangedLimit" type="Area2D" parent="." unique_id=2037734062]
+visible = false
 collision_layer = 32
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangedLimit" unique_id=722765043]
+visible = false
 shape = SubResource("CircleShape2D_al4r6")
 debug_color = Color(0.5936958, 0.53912836, 0.24250558, 0.05490196)
 
 [node name="Crosshair" parent="." unique_id=409720773 instance=ExtResource("4_g85nd")]
+visible = false
 collision_mask = 66

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b8xab02306oes" path="res://Sprites/Pentagram-Sheet.png" id="1_q67eb"]
 [ext_resource type="Texture2D" uid="uid://b0rtaj8tngja1" path="res://Sprites/Pentagram-Sheet4.png" id="2_7rtp2"]
 [ext_resource type="Texture2D" uid="uid://dlywpl0nm0gcb" path="res://Sprites/Pentagram-Sheet1.png" id="3_lph2h"]
+[ext_resource type="Texture2D" uid="uid://c7u60na13b3ag" path="res://Sprites/Lady_D-Sheet.png" id="5_7rtp2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qvwev"]
 atlas = ExtResource("2_7rtp2")
@@ -167,6 +168,98 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lph2h"]
+atlas = ExtResource("5_7rtp2")
+region = Rect2(0, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04qqq"]
+atlas = ExtResource("5_7rtp2")
+region = Rect2(576, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clx30"]
+atlas = ExtResource("5_7rtp2")
+region = Rect2(1152, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4rpo"]
+atlas = ExtResource("5_7rtp2")
+region = Rect2(1728, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pctfj"]
+atlas = ExtResource("5_7rtp2")
+region = Rect2(0, 324, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyyyf"]
+atlas = ExtResource("5_7rtp2")
+region = Rect2(576, 324, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7yqe"]
+atlas = ExtResource("5_7rtp2")
+region = Rect2(1152, 324, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mkvl"]
+atlas = ExtResource("5_7rtp2")
+region = Rect2(1728, 324, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m655r"]
+atlas = ExtResource("5_7rtp2")
+region = Rect2(0, 648, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i48f"]
+atlas = ExtResource("5_7rtp2")
+region = Rect2(576, 648, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfwoj"]
+atlas = ExtResource("5_7rtp2")
+region = Rect2(1152, 648, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb8y2"]
+atlas = ExtResource("5_7rtp2")
+region = Rect2(1728, 648, 576, 324)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kh5iw"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_lph2h")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_04qqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clx30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4rpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pctfj")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_lyyyf")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_k7yqe")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_6mkvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m655r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7i48f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfwoj")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_pb8y2")
+}],
+"loop": 1,
+"name": &"LadyD",
+"speed": 10.0
+}]
+
 [node name="Pentagram" type="Area2D" unique_id=1269892955]
 collision_layer = 0
 script = ExtResource("1_lll41")
@@ -205,6 +298,22 @@ position = Vector2(1, -12)
 sprite_frames = SubResource("SpriteFrames_u5bk5")
 animation = &"Off"
 autoplay = "Off"
+
+[node name="LadyD" type="CanvasLayer" parent="." unique_id=1703405707]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="LadyD" unique_id=1290631703]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.12156863, 0, 0, 0.19607843)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LadyD" unique_id=1492508909]
+position = Vector2(576, 324)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_kh5iw")
+animation = &"LadyD"
+frame = 1
+frame_progress = 0.96112627
 
 [connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
 [connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]

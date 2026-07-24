@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var is_punch = false
 func _process(delta):
 	
 	var gun_position = Vector2(1, 1)
@@ -14,13 +14,18 @@ func _physics_process(delta):
 	var direction = Input.get_vector("MoveLeft","MoveRight","MoveUp","MoveDown")
 	velocity = direction * 300
 	move_and_slide()
-	if velocity.length() > 0.0:
-		Walkanim()
+	if is_punch:
+		pass
 	else:
-		Idleanim()
+		if velocity.length() > 0.0:
+			Walkanim()
+		else:
+			Idleanim()
 	
 func Idleanim():
 	$AnimatedSprite2D.play("default")
 func Walkanim():
 	$AnimatedSprite2D.play("walk")
+func Punchanim():
+	$AnimatedSprite2D.play("punch")
 	

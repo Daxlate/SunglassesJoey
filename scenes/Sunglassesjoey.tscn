@@ -66,7 +66,7 @@ script = ExtResource("1_lc3ti")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2092795412]
 sprite_frames = SubResource("SpriteFrames_7rn7r")
 animation = &"punch"
-frame_progress = 0.9582625
+frame_progress = 0.08260068
 
 [node name="Label" type="Label" parent="." unique_id=1842232647]
 offset_right = 40.0

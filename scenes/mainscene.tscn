@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://cmjykoiwq7s6d"]
 
+[ext_resource type="Script" uid="uid://bqi287ck35rgk" path="res://scenes/Maincontrol.gd" id="1_4c2fu"]
 [ext_resource type="PackedScene" uid="uid://cabmdlahw5det" path="res://scenes/Sunglassesjoey.tscn" id="1_wtdyi"]
 [ext_resource type="PackedScene" uid="uid://b55np8d5iacbq" path="res://scenes/ranged_goon.tscn" id="2_nx3wj"]
 [ext_resource type="PackedScene" uid="uid://7c15euqreqib" path="res://scenes/basic_goon.tscn" id="3_nx3wj"]
 
+[sub_resource type="Curve2D" id="Curve2D_mo382"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -512, -453, 0, 0, 0, 0, 521, -438, 0, 0, 0, 0, 566, 432, 0, 0, 0, 0, -533, 422, 0, 0, 0, 0, -512, -453)
+}
+point_count = 5
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_golqe"]
 
 [node name="Mainscene" type="Node2D" unique_id=1728026456]
+script = ExtResource("1_4c2fu")
 
 [node name="Joey" parent="." unique_id=610775385 instance=ExtResource("1_wtdyi")]
 
@@ -15,39 +23,47 @@ position = Vector2(0, 1)
 zoom = Vector2(2, 2)
 rotation_smoothing_enabled = true
 
+[node name="Path2D" type="Path2D" parent="Joey" unique_id=905759994]
+curve = SubResource("Curve2D_mo382")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Joey/Path2D" unique_id=669119428]
+unique_name_in_owner = true
+position = Vector2(-512, -453)
+rotation = 0.014519792
+
 [node name="Boundaries" type="Node2D" parent="." unique_id=284425844]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries" unique_id=127826880]
+[node name="Up_boundary" type="StaticBody2D" parent="Boundaries" unique_id=127826880]
 rotation = 3.1414392
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D" unique_id=142056779]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Up_boundary" unique_id=142056779]
 position = Vector2(0, 371)
 shape = SubResource("WorldBoundaryShape2D_golqe")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Boundaries" unique_id=104401995]
+[node name="Left_boundary" type="StaticBody2D" parent="Boundaries" unique_id=104401995]
 position = Vector2(-245.00003, 0)
 rotation = 1.5702587
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D2" unique_id=727263432]
-position = Vector2(0, 371)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left_boundary" unique_id=727263432]
+position = Vector2(-0.095691025, 177.99992)
 shape = SubResource("WorldBoundaryShape2D_golqe")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Boundaries" unique_id=471552081]
+[node name="Down_boundary" type="StaticBody2D" parent="Boundaries" unique_id=471552081]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D4" unique_id=489216816]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Down_boundary" unique_id=489216816]
 position = Vector2(0, 371)
 shape = SubResource("WorldBoundaryShape2D_golqe")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Boundaries" unique_id=1387181058]
+[node name="Right_boundary" type="StaticBody2D" parent="Boundaries" unique_id=1387181058]
 position = Vector2(226, 1.0000002)
 rotation = -1.5734545
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/StaticBody2D3" unique_id=1466780106]
-position = Vector2(0, 371)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right_boundary" unique_id=1466780106]
+position = Vector2(0.48962814, 192.002)
 shape = SubResource("WorldBoundaryShape2D_golqe")
 
 [node name="enemies" type="Node" parent="." unique_id=93335251]
@@ -60,3 +76,9 @@ position = Vector2(75, 236)
 
 [node name="RangedGoon" parent="enemies" unique_id=1259224582 instance=ExtResource("2_nx3wj")]
 position = Vector2(-172, 158)
+
+[node name="Timer" type="Timer" parent="." unique_id=1954900178]
+wait_time = 0.506
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

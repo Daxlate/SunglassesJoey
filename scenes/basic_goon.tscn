@@ -31,7 +31,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nuwdk")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Punch",
 "speed": 5.0
 }, {
@@ -63,8 +63,10 @@ script = ExtResource("1_wr2nn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1678201634]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_opb3r")
+animation = &"Punch"
 autoplay = "default"
-frame_progress = 0.78736067
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=607695514]
 shape = SubResource("CapsuleShape2D_tohd5")

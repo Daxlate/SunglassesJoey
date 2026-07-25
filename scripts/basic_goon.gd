@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var hurt_box = get_node("/root/Mainscene/Joey/Hurtbox")
 var Punch_cooldown = 0.0
 var in_punch_range = false
+var health = 10.0
 
 func _physics_process(delta):
 	if self in hurt_box.get_overlapping_bodies():
@@ -29,6 +30,15 @@ func _physics_process(delta):
 		velocity = direction * 70
 
 	move_and_slide()
+
+func take_damage():
+	$AnimationPlayer.play("Hurt")
+	health -= 5
+	if health <= 0:
+		queue_free()
+	
+	
+
 
 func punch_anim():
 	$AnimatedSprite2D.play("Punch")

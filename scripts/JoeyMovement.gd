@@ -48,5 +48,4 @@ func Punchanim():
 
 
 func _on_timer_timeout() -> void:
-	print("timer finished, resetting cooldown")
 	cooldown = false

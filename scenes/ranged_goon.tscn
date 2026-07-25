@@ -34,6 +34,43 @@ animations = [{
 radius = 19.0
 height = 48.0
 
+[sub_resource type="Animation" id="Animation_nlbui"]
+resource_name = "Hurt"
+length = 0.19999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18566035),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.24705882, 0.27058825, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hxk0q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ducqr"]
+_data = {
+&"Hurt": SubResource("Animation_nlbui"),
+&"RESET": SubResource("Animation_hxk0q")
+}
+
 [node name="RangedGoon" type="CharacterBody2D" unique_id=78784907]
 collision_layer = 64
 collision_mask = 96
@@ -57,3 +94,6 @@ collision_mask = 32
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=150738566]
 shape = SubResource("CapsuleShape2D_es4b7")
 debug_color = Color(0.84313726, 0.34117648, 0.4509804, 0.23921569)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1048542798]
+libraries/ = SubResource("AnimationLibrary_ducqr")

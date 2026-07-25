@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var limit = get_node("/root/Mainscene/Joey/RangedLimit")
 var free_to_move := true
 var wait_time := 0.0
+var health = 10.0
 
 func _physics_process(delta):
 	if self in limit.get_overlapping_bodies():
@@ -21,3 +22,9 @@ func _physics_process(delta):
 		velocity = direction * 55
 
 	move_and_slide()
+	
+func take_damage():
+	$AnimationPlayer.play("Hurt")
+	health -= 5
+	if health <= 0:
+		queue_free()

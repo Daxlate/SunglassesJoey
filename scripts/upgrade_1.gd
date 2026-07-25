@@ -6,9 +6,6 @@ var lines = []
 const FILEPATH = "res://UpgradesText.txt"
 const DESCRIPTIONPATH = "res://UpgradesDescriptions.txt"
 
-#func _ready():
-	#UpdateTitle()
-
 func UpdateTitle():
 		var file = FileAccess.open("res://UpgradesText.txt", FileAccess.READ)
 		while not file.eof_reached():

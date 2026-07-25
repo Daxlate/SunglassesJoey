@@ -4,6 +4,7 @@ var Title = ""
 var Desc = ""
 var lines = []
 const FILEPATH = "res://UpgradesText.txt"
+const DESCRIPTIONPATH = "res://UpgradesDescriptions.txt"
 
 #func _ready():
 	#UpdateTitle()

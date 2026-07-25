@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cf4x57mead76h" path="res://scenes/pentagram.tscn" id="1_habj7"]
 [ext_resource type="Texture2D" uid="uid://bdnofo4olxqh3" path="res://Sprites/UpgradesIcon/UpgradesHolder.png" id="2_7efxm"]
-[ext_resource type="Script" uid="uid://dr3sss0wfqstx" path="res://upgrade_1.gd" id="3_10ngd"]
+[ext_resource type="Script" uid="uid://dr3sss0wfqstx" path="res://scripts/upgrade_1.gd" id="3_10ngd"]
 [ext_resource type="Texture2D" uid="uid://cv0md4aftfur2" path="res://Sprites/UpgradesIcon/UpgradeIcon1.png" id="4_k5ok5"]
 
 [node name="Pentagram" unique_id=1269892955 instance=ExtResource("1_habj7")]

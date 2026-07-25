@@ -13,7 +13,7 @@ func _physics_process(delta):
 		velocity = Vector2.ZERO
 	else:
 		if !free_to_move:
-			wait_time  =- delta
+			wait_time  -= delta
 			if wait_time <= 0:
 				free_to_move = true
 			
@@ -28,3 +28,16 @@ func take_damage():
 	health -= 5
 	if health <= 0:
 		queue_free()
+
+func shoot():
+	const EVILBULLET = preload("res://scenes/evil_bullet.tscn")
+	var new_bullet = EVILBULLET.instantiate()
+	new_bullet.global_position = self.global_position
+	var direction = global_position.direction_to(player.global_position)
+	new_bullet.global_rotation = direction.angle()
+	get_tree().current_scene.add_child(new_bullet)
+
+func _on_timer_timeout() -> void:
+	if self in limit.get_overlapping_bodies():
+		shoot()
+	

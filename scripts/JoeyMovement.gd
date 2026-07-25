@@ -5,6 +5,7 @@ var speed = 150
 var cooldown = false
 var upgrades = [false]
 @onready var Crosshair = $Crosshair/Marker2D
+@onready var The_timer = get_node("/root/Mainscene/Thetimer")
 
 func _process(delta):
 	
@@ -48,6 +49,8 @@ func Punchanim():
 	$AnimatedSprite2D.play("punch")
 	
 func take_damage():
+	if The_timer.has_method("change_time"):
+			The_timer.change_time(-1)
 	print("ouch")
 
 func _on_timer_timeout() -> void:

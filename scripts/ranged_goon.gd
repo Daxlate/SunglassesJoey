@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var player = get_node("/root/Mainscene/Joey")
 @onready var limit = get_node("/root/Mainscene/Joey/RangedLimit")
+@onready var The_timer = get_node("/root/Mainscene/Thetimer")
+
 var free_to_move := true
 var wait_time := 0.0
 var health = 10.0
@@ -27,6 +29,8 @@ func take_damage():
 	$AnimationPlayer.play("Hurt")
 	health -= 5
 	if health <= 0:
+		if The_timer.has_method("change_time"):
+			The_timer.change_time(3)
 		queue_free()
 
 func shoot():

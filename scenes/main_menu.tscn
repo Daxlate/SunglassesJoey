@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://cak6cysgmeemk"]
 
-[ext_resource type="Script" uid="uid://qhp3xv032gdg" path="res://scripts/Unpauser.gd" id="1_vqpxq"]
-[ext_resource type="PackedScene" uid="uid://cmjykoiwq7s6d" path="res://scenes/mainscene.tscn" id="3_r2oje"]
-[ext_resource type="Script" uid="uid://ns5fb2u3ubi6" path="res://scripts/quit.gd" id="6_uwblc"]
-[ext_resource type="Script" uid="uid://1en58tpa3mt7" path="res://scripts/play.gd" id="6_xlw4q"]
+[ext_resource type="Script" uid="uid://1en58tpa3mt7" path="res://scripts/play.gd" id="1_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://cmjykoiwq7s6d" path="res://scenes/mainscene.tscn" id="2_wu84c"]
+[ext_resource type="Script" uid="uid://ns5fb2u3ubi6" path="res://scripts/quit.gd" id="3_8ln24"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3xaah"]
 font_size = 30
@@ -15,7 +14,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vqpxq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1695967151]
 layout_mode = 1
@@ -36,13 +34,13 @@ theme_override_constants/separation = 20
 [node name="Play" type="Button" parent="VBoxContainer" unique_id=1933998570]
 layout_mode = 2
 text = "New game"
-script = ExtResource("6_xlw4q")
-main_scene = ExtResource("3_r2oje")
+script = ExtResource("1_bqqt6")
+main_scene = ExtResource("2_wu84c")
 
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=374350701]
 layout_mode = 2
 text = "Quit"
-script = ExtResource("6_uwblc")
+script = ExtResource("3_8ln24")
 
 [node name="Label" type="Label" parent="." unique_id=792536286]
 layout_mode = 0

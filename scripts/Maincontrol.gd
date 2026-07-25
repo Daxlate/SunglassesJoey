@@ -16,6 +16,7 @@ func spawnmobranged():
 	add_child(ranged_goon)
 
 
+
 func _on_timer_timeout() -> void:
 	spawnmob()
 

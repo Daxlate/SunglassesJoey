@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bqi287ck35rgk" path="res://scripts/Maincontrol.gd" id="1_4c2fu"]
 [ext_resource type="PackedScene" uid="uid://cabmdlahw5det" path="res://scenes/Sunglassesjoey.tscn" id="1_wtdyi"]
+[ext_resource type="Script" uid="uid://bs86emueorrs2" path="res://scripts/thetimer.gd" id="3_nx3wj"]
+[ext_resource type="PackedScene" uid="uid://d4hfhuawifr8v" path="res://scenes/game_over.tscn" id="4_4c2fu"]
 
 [sub_resource type="Curve2D" id="Curve2D_mo382"]
 _data = {
@@ -15,6 +17,12 @@ point_count = 5
 script = ExtResource("1_4c2fu")
 
 [node name="Joey" parent="." unique_id=610775385 instance=ExtResource("1_wtdyi")]
+
+[node name="Label2" type="Label" parent="Joey" unique_id=415202518]
+offset_left = -19.0
+offset_top = -160.0
+offset_right = 21.0
+offset_bottom = -137.0
 
 [node name="Camera2D" type="Camera2D" parent="Joey" unique_id=856768857]
 position = Vector2(0, 1)
@@ -71,6 +79,17 @@ autostart = true
 [node name="Range" type="Timer" parent="." unique_id=634709805]
 wait_time = 4.0
 autostart = true
+
+[node name="Thetimer" type="Control" parent="." unique_id=1733072512 node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -303.0
+offset_top = -263.0
+offset_right = -263.0
+offset_bottom = -223.0
+script = ExtResource("3_nx3wj")
+main_menu = ExtResource("4_4c2fu")
+label = NodePath("../Joey/Label2")
 
 [connection signal="timeout" from="MeeleTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Range" to="." method="_on_range_timeout"]

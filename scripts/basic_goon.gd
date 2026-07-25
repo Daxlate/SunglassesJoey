@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var player = get_node("/root/Mainscene/Joey")
 @onready var hurt_box = get_node("/root/Mainscene/Joey/Hurtbox")
+@onready var The_timer = get_node("/root/Mainscene/Thetimer")
 var Punch_cooldown = 0.0
 var in_punch_range = false
 var health = 10.0
@@ -18,6 +19,10 @@ func _physics_process(delta):
 		
 		if Punch_cooldown <= 0:
 			print("PUNCHED!")
+			if The_timer.has_method("change_time"):
+				The_timer.change_time(-1)
+			if player.has_method("take_damage"):
+				player.take_damage()
 			punch_anim()
 			Punch_cooldown = 0.5
 			
@@ -35,6 +40,9 @@ func take_damage():
 	$AnimationPlayer.play("Hurt")
 	health -= 5
 	if health <= 0:
+		if The_timer.has_method("change_time"):
+			The_timer.change_time(3)
+		queue_free()
 		queue_free()
 	
 	

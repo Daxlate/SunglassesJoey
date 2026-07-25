@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d4hfhuawifr8v"]
+
+[node name="Game over" type="Node2D" unique_id=1070301665]
+
+[node name="Label" type="Label" parent="." unique_id=1555030532]
+offset_left = 549.0
+offset_top = 298.0
+offset_right = 682.0
+offset_bottom = 321.0
+text = "sorry bro its over"

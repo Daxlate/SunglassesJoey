@@ -18,7 +18,8 @@ func _process(delta):
 		cooldown = true
 		shoot(usable_angle)
 		$Timer.start()
-	
+		print("it did")
+
 func shoot(angle_radians):
 	const JOEYBULLET = preload("res://scenes/joey_bullet.tscn")
 	var new_bullet = JOEYBULLET.instantiate()
@@ -46,7 +47,9 @@ func Walkanim():
 func Punchanim():
 	$AnimatedSprite2D.play("punch")
 	
-
+func take_damage():
+	print("ouch")
 
 func _on_timer_timeout() -> void:
+	print("poopoop")
 	cooldown = false

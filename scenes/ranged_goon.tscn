@@ -36,7 +36,7 @@ height = 48.0
 
 [sub_resource type="Animation" id="Animation_nlbui"]
 resource_name = "Hurt"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -73,7 +73,7 @@ _data = {
 
 [node name="RangedGoon" type="CharacterBody2D" unique_id=78784907]
 collision_layer = 64
-collision_mask = 96
+collision_mask = 64
 script = ExtResource("1_hh6sc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1197788757]
@@ -97,3 +97,9 @@ debug_color = Color(0.84313726, 0.34117648, 0.4509804, 0.23921569)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1048542798]
 libraries/ = SubResource("AnimationLibrary_ducqr")
+
+[node name="Timer" type="Timer" parent="." unique_id=1963240313]
+wait_time = 2.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

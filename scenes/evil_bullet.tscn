@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c55qrpwkemdyu"]
+
+[ext_resource type="Script" uid="uid://dt8s4f7025w28" path="res://scripts/evil_bullet.gd" id="1_20sio"]
+[ext_resource type="Texture2D" uid="uid://bpuyt8tgsg23x" path="res://Sprites/EnemyBullet.png" id="1_jletd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vna5"]
+radius = 3.888888
+
+[node name="evil_bullet" type="Area2D" unique_id=1484190480]
+top_level = true
+collision_layer = 256
+script = ExtResource("1_20sio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1663783800]
+position = Vector2(-2.0000005, 0)
+scale = Vector2(1.8000003, 1.8000003)
+shape = SubResource("CircleShape2D_1vna5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=29507826]
+position = Vector2(-4, 0)
+scale = Vector2(1.9600009, 1.9600009)
+texture = ExtResource("1_jletd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

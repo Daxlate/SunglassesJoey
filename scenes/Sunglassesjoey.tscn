@@ -78,7 +78,7 @@ shape = SubResource("CapsuleShape2D_7aqps")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1230020256]
 collision_layer = 8
-collision_mask = 2
+collision_mask = 258
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=644182706]
 shape = SubResource("CircleShape2D_lc3ti")
@@ -95,11 +95,13 @@ shape = SubResource("CircleShape2D_al4r6")
 debug_color = Color(0.5936958, 0.53912836, 0.24250558, 0.05490196)
 
 [node name="Crosshair" parent="." unique_id=409720773 instance=ExtResource("4_g85nd")]
+scale = Vector2(0.28000045, 0.28000045)
 collision_mask = 66
 
 [node name="Marker2D" type="Marker2D" parent="Crosshair" unique_id=777269550]
 
 [node name="Timer" type="Timer" parent="." unique_id=1481797899]
 wait_time = 0.4
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

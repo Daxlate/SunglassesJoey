@@ -1,24 +1,19 @@
 extends Area2D
 var State = 0
+@onready var joey = get_node("/root/Game/Joey")
 #@onready var Upgrade = $Upgrade1
 
 func _process(delta):
 	%PentagramFloor.position = global_position
 	var OverlappingBody = get_overlapping_bodies()
 	$LadyD.visible = false
-	#if (Upgrade != null):
-		#Upgrade.disabled = true
+	$Upgrade.disabled = true
 	if OverlappingBody.size() > 0:
 		if (State == 1):
 			$LadyD.visible = true
 			$LadyD/Upgrade1.UpdateTitle()
-			#if (Upgrade != null):
-				#Upgrade.disabled = false
+			$Upgrade.disabled = false
 			$LadyD/AnimatedSprite2D.play("LadyD")
-			if Input.is_action_pressed("shoot"):
-				TurnOff()
-				$Timer.start()
-				$Label.text = "asd"
 
 func _on_timer_timeout():
 	$Label.text = "yippe"
@@ -39,3 +34,13 @@ func _on_pentagram_floor_animation_finished():
 
 func _on_extra_effects_animation_finished():
 	%ExtraEffects.play("Off")
+
+
+func _on_upgrade_1_pressed() -> void:
+	TurnOff()
+	$Timer.start()
+	$Label.text = "asd"
+	if (joey != null):
+		var where = joey.upgrades.size + 1
+		joey.upgrades[where] = 0
+	pass

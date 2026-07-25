@@ -3,6 +3,7 @@ var is_punch = false
 var is_gun = false
 var speed = 150
 var cooldown = false
+var upgrades = []
 @onready var Crosshair = $Crosshair/Marker2D
 
 func _process(delta):
@@ -17,6 +18,9 @@ func _process(delta):
 		cooldown = true
 		shoot(usable_angle)
 		$Timer.start()
+	
+	if (upgrades.any == 0):
+		speed += 100
 
 func shoot(angle_radians):
 	const JOEYBULLET = preload("res://scenes/joey_bullet.tscn")

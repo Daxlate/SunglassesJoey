@@ -7,6 +7,17 @@
 
 [node name="Pentagram" unique_id=1269892955 instance=ExtResource("1_habj7")]
 
+[node name="ExtraEffects" parent="." index="0" unique_id=509498160]
+frame_progress = 0.0
+
+[node name="Label" parent="." index="2" unique_id=1146261009]
+visible = false
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 70.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 16
+
 [node name="Timer" parent="." index="3" unique_id=829150403]
 wait_time = 3.0
 
@@ -23,30 +34,30 @@ mouse_filter = 2
 [node name="Upgrade1" type="TextureButton" parent="LadyD" index="2" unique_id=597344761]
 unique_name_in_owner = true
 visibility_layer = 2
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 608.0
-offset_bottom = 320.0
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 592.0
+offset_bottom = 304.0
 texture_normal = ExtResource("2_7efxm")
 stretch_mode = 0
 script = ExtResource("3_10ngd")
 
-[node name="UpgradeIcon1" type="Sprite2D" parent="LadyD/Upgrade1" index="0" unique_id=1657021687]
+[node name="UpgradeIcon" type="Sprite2D" parent="LadyD/Upgrade1" index="0" unique_id=1657021687]
 position = Vector2(80, 80)
 scale = Vector2(2, 2)
 texture = ExtResource("4_k5ok5")
 
-[node name="UpgradeTitle1" type="Label" parent="LadyD/Upgrade1" index="1" unique_id=1188491644]
+[node name="UpgradeTitle" type="Label" parent="LadyD/Upgrade1" index="1" unique_id=1188491644]
 layout_mode = 0
 offset_left = 154.0
 offset_top = 62.0
 offset_right = 322.0
 offset_bottom = 93.0
 theme_override_font_sizes/font_size = 22
-text = "Edit me daddy"
+text = "Edit me"
 uppercase = true
 
-[node name="UpgradeDesc1" type="RichTextLabel" parent="LadyD/Upgrade1" index="2" unique_id=1265301683]
+[node name="UpgradeDesc" type="RichTextLabel" parent="LadyD/Upgrade1" index="2" unique_id=1265301683]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 141.0
@@ -56,4 +67,41 @@ mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 16
 text = "please for the love of god edit me i want nothing more in this existence than to be edited"
 
-[connection signal="pressed" from="LadyD/Upgrade1" to="." method="_on_upgrade_1_pressed"]
+[node name="Upgrade2" type="TextureButton" parent="LadyD" index="3" unique_id=1119972690]
+unique_name_in_owner = true
+visibility_layer = 2
+offset_left = 48.0
+offset_top = 336.0
+offset_right = 592.0
+offset_bottom = 592.0
+texture_normal = ExtResource("2_7efxm")
+stretch_mode = 0
+script = ExtResource("3_10ngd")
+
+[node name="UpgradeIcon" type="Sprite2D" parent="LadyD/Upgrade2" index="0" unique_id=2107763815]
+position = Vector2(80, 80)
+scale = Vector2(2, 2)
+texture = ExtResource("4_k5ok5")
+
+[node name="UpgradeTitle" type="Label" parent="LadyD/Upgrade2" index="1" unique_id=454036541]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 62.0
+offset_right = 322.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 22
+text = "Edit me"
+uppercase = true
+
+[node name="UpgradeDesc" type="RichTextLabel" parent="LadyD/Upgrade2" index="2" unique_id=99641832]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 141.0
+offset_right = 516.0
+offset_bottom = 232.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 16
+text = "please for the love of god edit me i want nothing more in this existence than to be edited"
+
+[connection signal="pressed" from="LadyD/Upgrade1" to="." method="_on_upgrade_pressed" flags=18]
+[connection signal="pressed" from="LadyD/Upgrade2" to="." method="_on_upgrade_pressed" flags=18]

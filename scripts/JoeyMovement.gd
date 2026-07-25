@@ -3,12 +3,14 @@ var is_punch = false
 var is_gun = false
 var speed = 150
 var cooldown = false
-var upgrades = [false]
+var upgrades = [false, false, false]
+var attack = 5
 @onready var Crosshair = $Crosshair/Marker2D
-@onready var The_timer = get_node("/root/Mainscene/Thetimer")
+@onready var cooltime = $Timer.wait_time
+@onready var The_timer = get_node_or_null("/root/Mainscene/Thetimer")
 
 func _process(delta):
-	
+	$Label.text = "SPD: " + str(speed) + "\n ATK: " + str(attack) + "\n CTM: " + str(cooltime) 
 	var gun_position = Vector2(1, 1)
 	var angle_to_mouse = gun_position.angle_to_point(get_local_mouse_position())
 	var usable_angle = rad_to_deg(angle_to_mouse)
@@ -18,7 +20,7 @@ func _process(delta):
 	if (Input.is_action_just_pressed("shoot") && cooldown == false):
 		cooldown = true
 		shoot(usable_angle)
-		$Timer.start()
+		$Timer.start(cooltime)
 		print("it did")
 
 func shoot(angle_radians):
@@ -49,9 +51,10 @@ func Punchanim():
 	$AnimatedSprite2D.play("punch")
 	
 func take_damage():
-	if The_timer.has_method("change_time"):
-			The_timer.change_time(-1)
-	print("ouch")
+	if(The_timer != null):
+		if The_timer.has_method("change_time"):
+				The_timer.change_time(-1)
+		print("ouch")
 
 func _on_timer_timeout() -> void:
 	print("poopoop")

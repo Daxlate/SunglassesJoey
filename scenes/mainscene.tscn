@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqi287ck35rgk" path="res://scripts/Maincontrol.gd" id="1_4c2fu"]
 [ext_resource type="PackedScene" uid="uid://cabmdlahw5det" path="res://scenes/Sunglassesjoey.tscn" id="1_wtdyi"]
+[ext_resource type="PackedScene" uid="uid://bdkuo06wo2gwb" path="res://scripts/pentagramcorrect.tscn" id="3_mo382"]
 [ext_resource type="Script" uid="uid://bs86emueorrs2" path="res://scripts/thetimer.gd" id="3_nx3wj"]
 [ext_resource type="PackedScene" uid="uid://d4hfhuawifr8v" path="res://scenes/game_over.tscn" id="4_4c2fu"]
 
@@ -36,6 +37,8 @@ curve = SubResource("Curve2D_mo382")
 unique_name_in_owner = true
 position = Vector2(-512, -453)
 rotation = 0.014519792
+
+[node name="Pentagram" parent="." unique_id=1269892955 instance=ExtResource("3_mo382")]
 
 [node name="Boundaries" type="Node2D" parent="." unique_id=284425844]
 

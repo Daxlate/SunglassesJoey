@@ -7,9 +7,7 @@ var auto_start:= true
 var running: bool = false
 
 func _ready():
-	
 	start()
-	
 func set_label(new_label: Label) -> void:
 	label = new_label
 func gotomenu():

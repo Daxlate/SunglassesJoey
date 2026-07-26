@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 @export var main_scene: PackedScene
 
@@ -7,6 +7,5 @@ func _ready() -> void:
 	#you can use .bind() to bind a value to the function
 
 func playgame():
-	get_tree().change_scene_to_packed(main_scene)
-	# you can use pressed.disconnect(_playgame)
-	
+	#get_tree().change_scene_to_packed(main_scene)
+	get_tree().change_scene_to_file("res://scenes/mainscene.tscn")

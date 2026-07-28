@@ -3,7 +3,7 @@ var enemy_in_area
 var cooldown = false
 @onready var joey = get_parent()
 
-func _process(delta):
+func _process(_delta):
 	var enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() > 0:
 		$Fuckingcirlce.modulate = Color(255.014, 0.0, 0.0, 0.196)

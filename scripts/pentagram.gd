@@ -8,7 +8,7 @@ var upgrade2 = null
 var times = 0
 var vis = false
 
-func _process(delta):
+func _process(_delta):
 	%PentagramFloor.position = position
 	%ExtraEffects.position = position + Vector2(1, -12)
 	var OverlappingBody = get_overlapping_bodies()

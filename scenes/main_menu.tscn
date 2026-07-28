@@ -7,9 +7,6 @@
 [ext_resource type="Script" uid="uid://ns5fb2u3ubi6" path="res://scripts/quit.gd" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://cyoonc5mu6ac6" path="res://Sprites/QuitButton.png" id="4_oa1go"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_3xaah"]
-font_size = 30
-
 [node name="MainMenu" type="Control" unique_id=790808065]
 layout_mode = 3
 anchors_preset = 15
@@ -44,12 +41,3 @@ offset_bottom = 638.0
 texture_normal = ExtResource("4_oa1go")
 stretch_mode = 3
 script = ExtResource("3_8ln24")
-
-[node name="Label" type="Label" parent="." unique_id=792536286]
-layout_mode = 0
-offset_left = 319.0
-offset_top = 157.0
-offset_right = 880.0
-offset_bottom = 199.0
-text = "sunglasses joey: The Devils timely deal"
-label_settings = SubResource("LabelSettings_3xaah")

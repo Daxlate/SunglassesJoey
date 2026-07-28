@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://jbjlnrc6eshf" path="res://Sprites/Gameover.png" id="1_v3hpu"]
 [ext_resource type="Texture2D" uid="uid://3fmdmxnnflam" path="res://Sprites/PlayButton.png" id="2_irg28"]
 [ext_resource type="Script" uid="uid://1en58tpa3mt7" path="res://scripts/play.gd" id="3_2jtsn"]
-[ext_resource type="PackedScene" uid="uid://cmjykoiwq7s6d" path="res://scenes/mainscene.tscn" id="4_8bugq"]
 [ext_resource type="Texture2D" uid="uid://cyoonc5mu6ac6" path="res://Sprites/QuitButton.png" id="5_wawo4"]
 [ext_resource type="Script" uid="uid://ns5fb2u3ubi6" path="res://scripts/quit.gd" id="6_56v3a"]
 
@@ -23,7 +22,6 @@ scale = Vector2(0.75, 0.75)
 texture_normal = ExtResource("2_irg28")
 stretch_mode = 0
 script = ExtResource("3_2jtsn")
-main_scene = ExtResource("4_8bugq")
 
 [node name="QuitBTN" type="TextureButton" parent="Gameover" unique_id=629072725]
 offset_left = -277.0

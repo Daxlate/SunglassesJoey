@@ -1,6 +1,5 @@
 extends TextureButton
 
-@export var main_scene: PackedScene
 
 func _ready() -> void:
 	pressed.connect(playgame, 4 )# 4 is bit of ConnectFlags.CONNECT_ONE_SHOT

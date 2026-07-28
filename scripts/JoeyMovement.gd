@@ -9,7 +9,7 @@ var attack = 5
 @onready var cooltime = $Timer.wait_time
 @onready var The_timer = get_node_or_null("/root/Mainscene/Thetimer")
 
-func _process(delta):
+func _process(_delta):
 	$Label.text = "SPD: " + str(speed) + "\n ATK: " + str(attack) + "\n CTM: " + str(cooltime) 
 	var gun_position = Vector2(1, 1)
 	var angle_to_mouse = gun_position.angle_to_point(get_local_mouse_position())
@@ -31,7 +31,7 @@ func shoot(angle_radians):
 	get_tree().current_scene.add_child(new_bullet)
 
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = Input.get_vector("MoveLeft","MoveRight","MoveUp","MoveDown")
 	velocity = direction * speed
 	move_and_slide()

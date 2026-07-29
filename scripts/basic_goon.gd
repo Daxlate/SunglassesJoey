@@ -22,7 +22,7 @@ func _physics_process(delta):
 			if The_timer.has_method("change_time"):
 				The_timer.change_time(-1)
 			if player.has_method("take_damage"):
-				player.take_damage()
+				player.take_damage(-2)
 			punch_anim()
 			Punch_cooldown = 0.5
 			

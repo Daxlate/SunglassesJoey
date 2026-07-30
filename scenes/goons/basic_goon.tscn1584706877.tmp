@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://7c15euqreqib"]
+
+[ext_resource type="Texture2D" uid="uid://bu56l8f3qfs4w" path="res://Sprites/enm1placeholder1.png" id="1_tohd5"]
+[ext_resource type="Script" uid="uid://dqdu1ymmcwxtj" path="res://scripts/basic_goon.gd" id="1_wr2nn"]
+[ext_resource type="Texture2D" uid="uid://b2yief28cqv36" path="res://Sprites/enm1placeholderPunch1.png" id="2_nlbui"]
+[ext_resource type="Texture2D" uid="uid://buaeawtlmu2er" path="res://Sprites/enm1placeholderPunch2.png" id="3_hxk0q"]
+[ext_resource type="Texture2D" uid="uid://bmxkayl4u5mc0" path="res://Sprites/enm1placeholder2.png" id="3_opb3r"]
+
+[sub_resource type="Animation" id="Animation_nlbui"]
+resource_name = "Hurt"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18566035),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.24705882, 0.27058825, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hxk0q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jng13"]
+_data = {
+&"Hurt": SubResource("Animation_nlbui"),
+&"RESET": SubResource("Animation_hxk0q")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jng13"]
+atlas = ExtResource("2_nlbui")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuwdk"]
+atlas = ExtResource("3_hxk0q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr2nn"]
+atlas = ExtResource("1_tohd5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a3vp"]
+atlas = ExtResource("3_opb3r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_opb3r"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_jng13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuwdk")
+}],
+"loop": 0,
+"name": &"Punch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wr2nn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3a3vp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tohd5"]
+radius = 13.0
+height = 34.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wr2nn"]
+radius = 18.0
+height = 36.0
+
+[node name="BasicGoon" type="CharacterBody2D" unique_id=260915355]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_wr2nn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1617103930]
+libraries/ = SubResource("AnimationLibrary_jng13")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1678201634]
+visibility_layer = 2
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_opb3r")
+animation = &"Punch"
+autoplay = "default"
+frame = 1
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=607695514]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_tohd5")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=583321854]
+collision_layer = 2
+collision_mask = 136
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=482809460]
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_wr2nn")
+debug_color = Color(0.83137256, 0.3529412, 0.4627451, 0.32941177)

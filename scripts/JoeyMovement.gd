@@ -2,6 +2,7 @@ extends CharacterBody2D
 var is_punch = false
 var is_gun = false
 var speed = 150
+var knockback = -100
 var cooldown = false
 var upgrades = [false, false, false]
 var attack = 5

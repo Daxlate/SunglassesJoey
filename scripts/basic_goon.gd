@@ -3,11 +3,15 @@ extends CharacterBody2D
 @onready var player = get_node("/root/Mainscene/Joey")
 @onready var hurt_box = get_node("/root/Mainscene/Joey/Hurtbox")
 @onready var The_timer = get_node("/root/Mainscene/Thetimer")
+@onready var static_direction = global_position.direction_to(player.global_position)
 var Punch_cooldown = 0.0
 var in_punch_range = false
 var health = 10.0
+var gun_knockback = false
 
 func _physics_process(delta):
+	var direction =global_position.direction_to(player.global_position)
+	
 	if self in hurt_box.get_overlapping_bodies():
 		velocity = Vector2.ZERO
 		
@@ -26,13 +30,16 @@ func _physics_process(delta):
 			punch_anim()
 			Punch_cooldown = 0.5
 			
+	if gun_knockback:
+		velocity = direction * player.knockback
+		gun_knockback = false
 		
 	else:
 		walk_anim()
 		in_punch_range = false
 		Punch_cooldown = 0.0
-		var direction = global_position.direction_to(player.global_position)
 		velocity = direction * 70
+	
 
 	move_and_slide()
 
@@ -46,7 +53,8 @@ func take_damage():
 		queue_free()
 	
 	
-
+func Took_gun_Knockback():
+	gun_knockback = true
 
 func punch_anim():
 	$AnimatedSprite2D.play("Punch")

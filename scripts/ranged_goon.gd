@@ -27,7 +27,7 @@ func _physics_process(delta):
 	
 func take_damage():
 	$AnimationPlayer.play("Hurt")
-	health -= 5
+	health -= player.attack
 	if health <= 0:
 		if The_timer.has_method("change_time"):
 			The_timer.change_time(3)

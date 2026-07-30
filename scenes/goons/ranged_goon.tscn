@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://b55np8d5iacbq"]
 
-[ext_resource type="Script" uid="uid://2gvbi540gt0b" path="res://scripts/ranged_goon.gd" id="1_hh6sc"]
-[ext_resource type="Texture2D" uid="uid://bhxtahkd3dqlu" path="res://Sprites/enm1placeholderGun1.png" id="2_ducqr"]
-[ext_resource type="Texture2D" uid="uid://dbnvo7jvsjaqo" path="res://Sprites/enm1placeholderGun2.png" id="3_mjjxf"]
+[ext_resource type="Script" uid="uid://2gvbi540gt0b" path="res://scripts/ranged_goon.gd" id="1_o5di2"]
+[ext_resource type="Texture2D" uid="uid://bhxtahkd3dqlu" path="res://Sprites/enm1placeholderGun1.png" id="2_sdmsp"]
+[ext_resource type="Texture2D" uid="uid://dbnvo7jvsjaqo" path="res://Sprites/enm1placeholderGun2.png" id="3_qf7oq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txbyy"]
 radius = 20.0
 height = 42.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxjks"]
-atlas = ExtResource("2_ducqr")
+atlas = ExtResource("2_sdmsp")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vqraf"]
-atlas = ExtResource("3_mjjxf")
+atlas = ExtResource("3_qf7oq")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yfrnc"]
@@ -74,7 +74,7 @@ _data = {
 [node name="RangedGoon" type="CharacterBody2D" unique_id=78784907]
 collision_layer = 64
 collision_mask = 64
-script = ExtResource("1_hh6sc")
+script = ExtResource("1_o5di2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1197788757]
 position = Vector2(0, 1)

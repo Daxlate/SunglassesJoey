@@ -20,14 +20,14 @@ func spawner():
 		print(Current_preset)
 	
 func spawnmobmelee():
-	var basic_goon_scene = preload("res://scenes/basic_goon.tscn")
+	var basic_goon_scene = preload("res://scenes/goons/basic_goon.tscn")
 	var basic_goon = basic_goon_scene.instantiate()
 	%PathFollow2D.progress_ratio = randf()
 	basic_goon.global_position = %PathFollow2D.global_position
 	add_child(basic_goon)
 	
 func spawnmobranged():
-	var ranged_goon_scene = preload("res://scenes/ranged_goon.tscn")
+	var ranged_goon_scene = preload("res://scenes/goons/ranged_goon.tscn")
 	var ranged_goon = ranged_goon_scene.instantiate()
 	%PathFollow2D.progress_ratio = randf()
 	ranged_goon.global_position = %PathFollow2D.global_position
@@ -54,5 +54,5 @@ func testpreset():
 		spawnmobranged()
 	
 func preset_choose():
-	var rand_range = randi_range(1)
+	var rand_range = randi_range(1,1)
 	return rand_range

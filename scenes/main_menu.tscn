@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bdm5ljqkp6o7n" path="res://Sprites/KeyArt.png" id="1_8ln24"]
 [ext_resource type="Script" uid="uid://1en58tpa3mt7" path="res://scripts/play.gd" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://3fmdmxnnflam" path="res://Sprites/PlayButton.png" id="2_rtw2f"]
-[ext_resource type="PackedScene" uid="uid://cmjykoiwq7s6d" path="res://scenes/mainscene.tscn" id="2_wu84c"]
 [ext_resource type="Script" uid="uid://ns5fb2u3ubi6" path="res://scripts/quit.gd" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://cyoonc5mu6ac6" path="res://Sprites/QuitButton.png" id="4_oa1go"]
 
@@ -15,29 +14,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="KeyArt" type="Sprite2D" parent="." unique_id=322564177]
-position = Vector2(576, 324)
-scale = Vector2(2, 2)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=491013114]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_8ln24")
+stretch_mode = 6
 
 [node name="PlayBTN" type="TextureButton" parent="." unique_id=1776142964]
-layout_mode = 0
-offset_left = 382.0
-offset_top = 213.0
-offset_right = 556.0
-offset_bottom = 275.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -39.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(2, 2)
 texture_normal = ExtResource("2_rtw2f")
 stretch_mode = 0
 script = ExtResource("1_bqqt6")
-main_scene = ExtResource("2_wu84c")
 
 [node name="QuitBTN" type="TextureButton" parent="." unique_id=547900447]
-layout_mode = 0
-offset_left = 496.0
-offset_top = 576.0
-offset_right = 640.0
-offset_bottom = 638.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -115.0
+offset_right = 72.0
+grow_horizontal = 2
+grow_vertical = 0
 texture_normal = ExtResource("4_oa1go")
 stretch_mode = 3
 script = ExtResource("3_8ln24")

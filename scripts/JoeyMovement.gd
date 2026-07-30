@@ -4,21 +4,23 @@ var is_gun = false
 var speed = 150
 var knockback = -100
 var cooldown = false
-var upgrades = [false, false, false, false]
-var attack = 5
+var upgrades = [false, false, false, false, false]
+var gun_attack = 5
+var punch_attack = 5
+var test = 0
 @onready var Crosshair = $Crosshair/Marker2D
 @onready var cooltime = $Timer.wait_time
 @onready var The_timer = get_node_or_null("/root/Mainscene/Thetimer")
 
 func _process(_delta):
-	$Label.text = "SPD: " + str(speed) + "\n ATK: " + str(attack) + "\n CTM: " + str(cooltime) 
+	$Label.text = str(get_tree().paused)
 	var gun_position = Vector2(1, 1)
 	var angle_to_mouse = gun_position.angle_to_point(get_local_mouse_position())
 	var usable_angle = rad_to_deg(angle_to_mouse)
 	var final_vector = Vector2.from_angle(angle_to_mouse) * 40
 	$Crosshair.scale = Vector2(0.3,0.3)
 	$Crosshair.position = final_vector
-	if (Input.is_action_just_pressed("shoot") && cooldown == false):
+	if (Input.is_action_just_pressed("shoot") && cooldown == false && get_tree().paused == false):
 		cooldown = true
 		shoot(usable_angle)
 		$Timer.start(cooltime)

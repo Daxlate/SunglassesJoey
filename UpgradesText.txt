@@ -1,4 +1,5 @@
 Speed Boost
-Attack Boost
+Punch Attack Boost
 Cooldown lower
 More Knockback
+Gun Attack Boost

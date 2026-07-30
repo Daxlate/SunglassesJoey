@@ -11,7 +11,6 @@
 frame_progress = 0.0
 
 [node name="Label" parent="." index="2" unique_id=1146261009]
-visible = false
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 70.0
@@ -38,6 +37,7 @@ offset_left = 48.0
 offset_top = 48.0
 offset_right = 592.0
 offset_bottom = 304.0
+mouse_filter = 1
 texture_normal = ExtResource("2_7efxm")
 stretch_mode = 0
 script = ExtResource("3_10ngd")
@@ -74,6 +74,7 @@ offset_left = 48.0
 offset_top = 336.0
 offset_right = 592.0
 offset_bottom = 592.0
+mouse_filter = 1
 texture_normal = ExtResource("2_7efxm")
 stretch_mode = 0
 script = ExtResource("3_10ngd")

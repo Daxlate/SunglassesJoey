@@ -34,11 +34,13 @@ _bundled = {
 }
 
 [node name="Mainscene" type="Node2D" unique_id=1728026456 node_paths=PackedStringArray("Wavetimer", "testlabel")]
+process_mode = 3
 script = ExtResource("1_4c2fu")
 Wavetimer = NodePath("WaveSpawnTimer")
 testlabel = NodePath("Joey/Label3")
 
 [node name="Joey" parent="." unique_id=610775385 instance=ExtResource("1_wtdyi")]
+process_mode = 3
 position = Vector2(0, 85)
 
 [node name="Label3" type="Label" parent="Joey" unique_id=1519446733]
@@ -67,8 +69,10 @@ position = Vector2(-512, -453)
 rotation = 0.014519792
 
 [node name="Pentagram" parent="." unique_id=1269892955 instance=ExtResource("3_mo382")]
+process_mode = 3
 
 [node name="Boundaries" type="Node2D" parent="." unique_id=284425844]
+process_mode = 1
 
 [node name="Up_boundary" type="StaticBody2D" parent="Boundaries" unique_id=127826880]
 rotation = 3.1414392
@@ -104,10 +108,12 @@ position = Vector2(0.48962814, 192.002)
 shape = SubResource("WorldBoundaryShape2D_golqe")
 
 [node name="WaveSpawnTimer" type="Timer" parent="." unique_id=1954900178]
+process_mode = 1
 wait_time = 1.4
 autostart = true
 
 [node name="Thetimer" type="Control" parent="." unique_id=1733072512 node_paths=PackedStringArray("label")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_left = -303.0

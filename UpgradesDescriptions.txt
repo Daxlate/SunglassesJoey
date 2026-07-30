@@ -1,3 +1,4 @@
 Make yourself faster
 Make yourself stronger
 Make the cooldown between bullets less
+Gives you better knockback

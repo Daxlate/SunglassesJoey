@@ -64,7 +64,7 @@ func _on_extra_effects_animation_finished():
 	%ExtraEffects.play("Off")
 func generate_upgrade(which: int):
 	times += 1
-	var randomupgrade = randi_range(0,2)
+	var randomupgrade = randi_range(0,3)
 	if (joey.upgrades.count(false) > 1):
 		while (joey.upgrades[randomupgrade]):
 			randomupgrade = randi_range(0,1)
@@ -93,3 +93,5 @@ func _on_upgrade_pressed(source: BaseButton) -> void:
 				2:
 					joey.upgrades[2] = true
 					joey.cooltime = joey.cooltime * 0.75
+				3:
+					joey.knockback += -500

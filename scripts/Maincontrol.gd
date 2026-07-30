@@ -48,7 +48,7 @@ func _on_timer_timeout() -> void:
 	
 func testpreset():
 	var rand_range = randi_range(1,10)
-	if rand_range < 7:
+	if rand_range < 8:
 		spawnmobmelee()
 	else:
 		spawnmobranged()

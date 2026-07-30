@@ -7,8 +7,11 @@ extends CharacterBody2D
 var free_to_move := true
 var wait_time := 0.0
 var health = 10.0
+var gun_knockback = false
 
 func _physics_process(delta):
+	var direction = global_position.direction_to(player.global_position)
+	
 	if self in limit.get_overlapping_bodies():
 		free_to_move = false
 		wait_time = 2.0
@@ -20,8 +23,11 @@ func _physics_process(delta):
 				free_to_move = true
 			
 	if free_to_move:
-		var direction = global_position.direction_to(player.global_position)
 		velocity = direction * 55
+		
+	if gun_knockback:
+		velocity = direction * player.knockback
+		gun_knockback = false
 
 	move_and_slide()
 	
@@ -32,6 +38,9 @@ func take_damage():
 		if The_timer.has_method("change_time"):
 			The_timer.change_time(3)
 		queue_free()
+		
+func Took_gun_Knockback():
+	gun_knockback = true
 
 func shoot():
 	const EVILBULLET = preload("res://scenes/evil_bullet.tscn")

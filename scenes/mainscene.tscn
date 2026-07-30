@@ -4,7 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cabmdlahw5det" path="res://scenes/Sunglassesjoey.tscn" id="1_wtdyi"]
 [ext_resource type="PackedScene" uid="uid://bdkuo06wo2gwb" path="res://scripts/pentagramcorrect.tscn" id="3_mo382"]
 [ext_resource type="Script" uid="uid://bs86emueorrs2" path="res://scripts/thetimer.gd" id="3_nx3wj"]
-[ext_resource type="PackedScene" uid="uid://d4hfhuawifr8v" path="res://scenes/game_over.tscn" id="4_4c2fu"]
+[ext_resource type="Texture2D" uid="uid://jbjlnrc6eshf" path="res://Sprites/Gameover.png" id="5_bw6rn"]
+[ext_resource type="Texture2D" uid="uid://cyoonc5mu6ac6" path="res://Sprites/QuitButton.png" id="6_jifap"]
+[ext_resource type="Script" uid="uid://ns5fb2u3ubi6" path="res://scripts/quit.gd" id="7_xl61e"]
+[ext_resource type="Texture2D" uid="uid://3fmdmxnnflam" path="res://Sprites/PlayButton.png" id="8_0o2or"]
+[ext_resource type="Script" uid="uid://1en58tpa3mt7" path="res://scripts/play.gd" id="9_457mv"]
 
 [sub_resource type="Curve2D" id="Curve2D_mo382"]
 _data = {
@@ -13,6 +17,21 @@ _data = {
 point_count = 5
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_golqe"]
+
+[sub_resource type="PackedScene" id="PackedScene_l58e3"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Game over", "Node2D", "TextureRect", "anchors_preset", "anchor_right", "anchor_bottom", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "texture", "stretch_mode", "QuitBTN", "offset_left", "offset_top", "scale", "texture_normal", "script", "TextureButton", "PlayBTN"),
+"node_count": 4,
+"node_ids": PackedInt32Array(1070301665, 1620157407, 629072725, 191088739),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 2, 2, -1, 9, 3, 0, 4, 1, 5, 1, 6, 2, 7, 3, 8, 4, 9, 4, 10, 5, 11, 6, 0, 0, 0, 18, 12, -1, 8, 13, 7, 14, 8, 6, 9, 7, 10, 15, 11, 16, 12, 11, 13, 17, 14, 0, 0, 0, 18, 19, -1, 8, 13, 15, 14, 16, 6, 17, 7, 18, 15, 19, 16, 20, 11, 21, 17, 22, 0),
+"variants": [15, 1.0, 1152.0, 648.0, 2, ExtResource("5_bw6rn"), 6, 22.0, 570.0, 166.0, 632.0, Vector2(0.5, 0.5), ExtResource("6_jifap"), 3, ExtResource("7_xl61e"), 877.0, 141.0, 1051.0, 203.0, Vector2(0.75, 0.75), ExtResource("8_0o2or"), 0, ExtResource("9_457mv")],
+"version": 3
+}
 
 [node name="Mainscene" type="Node2D" unique_id=1728026456 node_paths=PackedStringArray("Wavetimer", "testlabel")]
 script = ExtResource("1_4c2fu")
@@ -96,7 +115,7 @@ offset_top = -263.0
 offset_right = -263.0
 offset_bottom = -223.0
 script = ExtResource("3_nx3wj")
-main_menu = ExtResource("4_4c2fu")
+main_menu = SubResource("PackedScene_l58e3")
 label = NodePath("../Joey/Label2")
 
 [connection signal="timeout" from="WaveSpawnTimer" to="." method="_on_timer_timeout"]

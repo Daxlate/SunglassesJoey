@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d4hfhuawifr8v"]
+[gd_scene format=3 uid="uid://svo5t4o6m0ig"]
 
 [ext_resource type="Texture2D" uid="uid://jbjlnrc6eshf" path="res://Sprites/Gameover.png" id="1_v3hpu"]
 [ext_resource type="Texture2D" uid="uid://3fmdmxnnflam" path="res://Sprites/PlayButton.png" id="2_irg28"]
@@ -6,29 +6,49 @@
 [ext_resource type="Texture2D" uid="uid://cyoonc5mu6ac6" path="res://Sprites/QuitButton.png" id="5_wawo4"]
 [ext_resource type="Script" uid="uid://ns5fb2u3ubi6" path="res://scripts/quit.gd" id="6_56v3a"]
 
-[node name="Game over" type="Node2D" unique_id=1070301665]
+[node name="Game_over" type="Control" unique_id=1821529011]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Gameover" type="Sprite2D" parent="." unique_id=147390741]
-position = Vector2(576, 324)
-scale = Vector2(2, 2)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=878252772]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_v3hpu")
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
 
-[node name="PlayBTN" type="TextureButton" parent="Gameover" unique_id=191088739]
-offset_left = 150.5
-offset_top = -91.5
-offset_right = 324.5
-offset_bottom = -29.5
-scale = Vector2(0.75, 0.75)
-texture_normal = ExtResource("2_irg28")
-stretch_mode = 0
-script = ExtResource("3_2jtsn")
-
-[node name="QuitBTN" type="TextureButton" parent="Gameover" unique_id=629072725]
-offset_left = -277.0
-offset_top = 123.0
-offset_right = -133.0
-offset_bottom = 185.0
+[node name="QuitBTN" type="TextureButton" parent="." unique_id=105943908]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 63.0
+offset_top = -69.0
+offset_right = 207.0
+offset_bottom = -7.0
+grow_vertical = 0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("5_wawo4")
 stretch_mode = 3
 script = ExtResource("6_56v3a")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayBTN" type="TextureButton" parent="." unique_id=1763623842]
+layout_mode = 1
+offset_left = 877.0
+offset_top = 141.0
+offset_right = 1051.0
+offset_bottom = 203.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("2_irg28")
+stretch_mode = 0
+script = ExtResource("3_2jtsn")
+metadata/_edit_use_anchors_ = true

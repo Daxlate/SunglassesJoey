@@ -3,3 +3,4 @@ Punch Attack Boost
 Cooldown lower
 More Knockback
 Gun Attack Boost
+Triple Weilding

@@ -70,7 +70,7 @@ func _on_extra_effects_animation_finished():
 
 func generate_upgrade(which: int):
 	times += 1
-	var randomupgrade = randi_range(0,4)
+	var randomupgrade = randi_range(0,5)
 	if (joey.upgrades.count(false) > 1):
 		while (joey.upgrades[randomupgrade]):
 			randomupgrade = randi_range(0,1)
@@ -80,6 +80,7 @@ func generate_upgrade(which: int):
 			while (upgrade1 == randomupgrade):
 				randomupgrade = randi_range(0,1)
 	var upgradebutton = get_node("%Upgrade" + str(which))
+	randomupgrade = 5
 	upgradebutton.Upgrade = randomupgrade
 	generated_upgrade = true
 
@@ -90,15 +91,14 @@ func _on_upgrade_pressed(source: BaseButton) -> void:
 		if (joey != null):
 			match (source.Upgrade):
 				0:
-					#joey.upgrades[0] = true
 					joey.speed += 100
 				1:
-					#joey.upgrades[1] = true
 					joey.punch_attack += 3 
 				2:
-					joey.upgrades[2] = true
 					joey.cooltime = joey.cooltime * 0.75
 				3:
 					joey.knockback += -500
 				4:
 					joey.gun_attack += 3 
+				5:
+					joey.upgrades[5] = true

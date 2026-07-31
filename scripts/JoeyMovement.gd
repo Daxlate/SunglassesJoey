@@ -4,7 +4,7 @@ var is_gun = false
 var speed = 150
 var knockback = -100
 var cooldown = false
-var upgrades = [false, false, false, false, false]
+var upgrades = [false, false, false, false, false, false]
 var gun_attack = 5
 var punch_attack = 5
 var test = 0
@@ -23,6 +23,9 @@ func _process(_delta):
 	if (Input.is_action_just_pressed("shoot") && cooldown == false && get_tree().paused == false):
 		cooldown = true
 		shoot(usable_angle)
+		if upgrades[5] == true:
+			shoot(usable_angle - 30)
+			shoot(usable_angle + 30)
 		$Timer.start(cooltime)
 
 func shoot(angle_radians):

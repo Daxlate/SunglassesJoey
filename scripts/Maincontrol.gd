@@ -35,7 +35,7 @@ func spawnmobranged():
 
 
 
-func _on_timer_timeout() -> void:
+func _on_wave_spawn_timer_timeout() -> void:
 	if Spawn_amount == Spawn_cap:
 		Spawn_amount = 0
 		Spawn_cap = Spawn_cap * Spawn_multiplier
@@ -46,9 +46,10 @@ func _on_timer_timeout() -> void:
 	spawner()
 	Spawn_amount += 1
 	
+	
 func testpreset():
 	var rand_range = randi_range(1,10)
-	if rand_range < 8:
+	if rand_range < 0:
 		spawnmobmelee()
 	else:
 		spawnmobranged()

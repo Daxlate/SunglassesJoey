@@ -33,11 +33,8 @@ _bundled = {
 "version": 3
 }
 
-[node name="Mainscene" type="Node2D" unique_id=1728026456 node_paths=PackedStringArray("Wavetimer", "testlabel")]
+[node name="Mainscene" type="Node2D" unique_id=1728026456]
 process_mode = 3
-script = ExtResource("1_4c2fu")
-Wavetimer = NodePath("WaveSpawnTimer")
-testlabel = NodePath("Joey/Label3")
 
 [node name="Joey" parent="." unique_id=610775385 instance=ExtResource("1_wtdyi")]
 process_mode = 3
@@ -107,7 +104,12 @@ collision_layer = 4
 position = Vector2(0.48962814, 192.002)
 shape = SubResource("WorldBoundaryShape2D_golqe")
 
-[node name="WaveSpawnTimer" type="Timer" parent="." unique_id=1954900178]
+[node name="Spawn Control" type="Node2D" parent="." unique_id=345390515 node_paths=PackedStringArray("Wavetimer", "testlabel")]
+script = ExtResource("1_4c2fu")
+Wavetimer = NodePath("WaveSpawnTimer")
+testlabel = NodePath("../Joey/Label3")
+
+[node name="WaveSpawnTimer" type="Timer" parent="Spawn Control" unique_id=1954900178]
 process_mode = 1
 wait_time = 1.4
 autostart = true
@@ -124,4 +126,4 @@ script = ExtResource("3_nx3wj")
 main_menu = SubResource("PackedScene_l58e3")
 label = NodePath("../Joey/Label2")
 
-[connection signal="timeout" from="WaveSpawnTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawn Control/WaveSpawnTimer" to="Spawn Control" method="_on_wave_spawn_timer_timeout"]

@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://ns5fb2u3ubi6" path="res://scripts/quit.gd" id="7_xl61e"]
 [ext_resource type="Texture2D" uid="uid://3fmdmxnnflam" path="res://Sprites/PlayButton.png" id="8_0o2or"]
 [ext_resource type="Script" uid="uid://1en58tpa3mt7" path="res://scripts/play.gd" id="9_457mv"]
+[ext_resource type="Texture2D" uid="uid://c0xt046r3ihmc" path="res://Sprites/Clock2.png" id="10_xl61e"]
+[ext_resource type="Texture2D" uid="uid://c6p06inn851qw" path="res://Sprites/Clock1.png" id="11_0o2or"]
 
 [sub_resource type="Curve2D" id="Curve2D_mo382"]
 _data = {
@@ -125,5 +127,23 @@ offset_bottom = -223.0
 script = ExtResource("3_nx3wj")
 main_menu = SubResource("PackedScene_l58e3")
 label = NodePath("../Joey/Label2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Thetimer" unique_id=1308925001]
+
+[node name="ClockTexture" type="TextureProgressBar" parent="Thetimer/CanvasLayer" unique_id=1835573545]
+unique_name_in_owner = true
+process_mode = 3
+offset_left = 528.0
+offset_top = 24.0
+offset_right = 576.0
+offset_bottom = 72.0
+scale = Vector2(2, 2)
+max_value = 60.0
+value = 50.0
+rounded = true
+allow_greater = true
+fill_mode = 5
+texture_under = ExtResource("10_xl61e")
+texture_progress = ExtResource("11_0o2or")
 
 [connection signal="timeout" from="Spawn Control/WaveSpawnTimer" to="Spawn Control" method="_on_wave_spawn_timer_timeout"]

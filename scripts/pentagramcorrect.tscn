@@ -21,6 +21,7 @@ theme_override_font_sizes/font_size = 16
 wait_time = 3.0
 
 [node name="LadyD" parent="." index="5" unique_id=1703405707]
+layer = 3
 visible = true
 
 [node name="ColorRect" parent="LadyD" index="0" unique_id=1290631703]

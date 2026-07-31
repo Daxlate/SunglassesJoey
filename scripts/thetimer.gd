@@ -36,7 +36,17 @@ func change_time(amount):
 	label.text = str(time_left)
 	
 func _update_label() -> void:
-	if label:
-		var minutes := int(time_left) / 60
-		var seconds := int(time_left) % 60
-		label.text = "%02d:%02d" % [minutes, seconds]
+	#if label:
+		#var minutes := int(time_left) / 60
+		#var seconds := int(time_left) % 60
+		#label.text = "%02d:%02d" % [minutes, seconds]
+	var minutes: float = time_left/60
+	var seconds = int(time_left)%60
+	#for i in range(int(minutes)):
+		#print("A MINUTE")
+	%ClockTexture.value = seconds
+
+	if time_left < 10:
+		%ClockTexture.modulate = Color(0.502, 0.0, 0.0, 1.0)
+	else:
+		%ClockTexture.modulate =  Color(1.0, 1.0, 1.0, 1.0)

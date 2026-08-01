@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2opxkkf3uli"]
 
 [ext_resource type="Script" uid="uid://b273ldh6gx6do" path="res://scripts/area_2d.gd" id="1_norqy"]
+[ext_resource type="Texture2D" uid="uid://bdnofo4olxqh3" path="res://Sprites/UpgradesIcon/UpgradesHolder.png" id="2_ihytv"]
 [ext_resource type="Texture2D" uid="uid://bvwh1j3h3s6hh" path="res://Sprites/fuckingcirlce.png" id="2_qnjby"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hyixy"]
@@ -16,6 +17,12 @@ script = ExtResource("1_norqy")
 scale = Vector2(2.713464, 2.8000011)
 shape = SubResource("CapsuleShape2D_hyixy")
 
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=211987908]
+position = Vector2(0.73706436, -1.0714273)
+rotation = 1.5799657
+scale = Vector2(0.27663815, 0.31930804)
+texture = ExtResource("2_ihytv")
+
 [node name="Fuckingcirlce" type="Sprite2D" parent="." unique_id=706326139]
 modulate = Color(1, 1, 1, 0.19607843)
 position = Vector2(0, -1)
@@ -23,7 +30,6 @@ scale = Vector2(4.6020975, 4.6020975)
 texture = ExtResource("2_qnjby")
 
 [node name="Cooldownpunch" type="Timer" parent="." unique_id=191610982]
-wait_time = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Cooldownpunch" to="." method="_on_timer_timeout"]

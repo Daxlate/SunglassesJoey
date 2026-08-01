@@ -2,11 +2,12 @@ extends CharacterBody2D
 var is_punch = false
 var is_gun = false
 var speed = 150
-var knockback = -100
+var gun_knockback = -100
+var punch_knockback = -800
 var cooldown = false
 var upgrades = [false, false, false, false, false, false]
 var gun_attack = 5
-var punch_attack = 5
+var punch_attack = 2.5
 var test = 0
 @onready var Crosshair = $Crosshair/Marker2D
 @onready var cooltime = $Timer.wait_time
@@ -20,6 +21,7 @@ func _process(_delta):
 	var final_vector = Vector2.from_angle(angle_to_mouse) * 40
 	$Crosshair.scale = Vector2(0.3,0.3)
 	$Crosshair.position = final_vector
+	$Crosshair/CollisionShape2D.global_rotation = angle_to_mouse
 	if (Input.is_action_just_pressed("shoot") && cooldown == false && get_tree().paused == false):
 		cooldown = true
 		shoot(usable_angle)

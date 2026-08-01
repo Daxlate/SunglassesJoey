@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Enemy
 
 @onready var player = get_node("/root/Mainscene/Joey")
 @onready var limit = get_node("/root/Mainscene/Joey/RangedLimit")
@@ -8,6 +8,7 @@ var free_to_move := true
 var wait_time := 0.0
 var health = 10.0
 var gun_knockback = false
+var punch_knockback
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
@@ -26,12 +27,16 @@ func _physics_process(delta):
 		velocity = direction * 55
 		
 	if gun_knockback:
-		velocity = direction * player.knockback
+		velocity = direction * player.gun_knockback
 		gun_knockback = false
+	
+	if punch_knockback:
+		velocity = direction * player.punch_knockback
+		punch_knockback = false
 
 	move_and_slide()
 	
-func take_damage():
+func take_gun_damage():
 	$AnimationPlayer.play("Hurt")
 	health -= player.gun_attack
 	if health <= 0:
@@ -39,8 +44,19 @@ func take_damage():
 			The_timer.change_time(3)
 		queue_free()
 		
+func take_punch_damage():
+	$AnimationPlayer.play("Hurt")
+	health -= player.punch_attack
+	if health <= 0:
+		if The_timer.has_method("change_time"):
+			The_timer.change_time(3)
+		queue_free()
+		
 func Took_gun_Knockback():
 	gun_knockback = true
+
+func Took_punch_Knockback():
+	punch_knockback = true
 
 func shoot():
 	const EVILBULLET = preload("res://scenes/evil_bullet.tscn")

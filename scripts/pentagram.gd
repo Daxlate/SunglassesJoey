@@ -97,7 +97,8 @@ func _on_upgrade_pressed(source: BaseButton) -> void:
 				2:
 					joey.cooltime = joey.cooltime * 0.75
 				3:
-					joey.knockback += -500
+					joey.gun_knockback += -500
+					joey.punch_knockback += -500
 				4:
 					joey.gun_attack += 3 
 				5:

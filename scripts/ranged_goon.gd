@@ -8,12 +8,14 @@ var free_to_move := true
 var wait_time := 0.0
 var health = 10.0
 var gun_knockback = false
-var punch_knockback
+var punch_knockback = false
+var knocked_back = false
+var knockback_resistance = 0.9
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
 	
-	if self in limit.get_overlapping_bodies():
+	if self in limit.get_overlapping_bodies() and !knocked_back:
 		free_to_move = false
 		wait_time = 2.0
 		velocity = Vector2.ZERO
@@ -23,18 +25,23 @@ func _physics_process(delta):
 			if wait_time <= 0:
 				free_to_move = true
 			
-	if free_to_move:
-		velocity = direction * 55
-		
-	if gun_knockback:
-		velocity = direction * player.gun_knockback
-		gun_knockback = false
+	if !knocked_back:
+		if free_to_move:
+			velocity = direction * 55
+	else:
+		if gun_knockback:
+			$knockedtime.start()
+			velocity = direction * player.gun_knockback * knockback_resistance
+			gun_knockback = false
 	
-	if punch_knockback:
-		velocity = direction * player.punch_knockback
-		punch_knockback = false
+		if punch_knockback:
+			$knockedtime.start()
+			velocity = direction * player.punch_knockback * knockback_resistance
+			punch_knockback = false
+	
 
 	move_and_slide()
+	
 	
 func take_gun_damage():
 	$AnimationPlayer.play("Hurt")
@@ -53,9 +60,11 @@ func take_punch_damage():
 		queue_free()
 		
 func Took_gun_Knockback():
+	knocked_back = true
 	gun_knockback = true
 
 func Took_punch_Knockback():
+	knocked_back = true
 	punch_knockback = true
 
 func shoot():
@@ -70,3 +79,6 @@ func _on_timer_timeout() -> void:
 	if self in limit.get_overlapping_bodies():
 		shoot()
 	
+
+func _on_knockedtime_timeout() -> void:
+	knocked_back = false

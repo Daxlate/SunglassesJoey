@@ -16,6 +16,10 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("3_g85nd")
 region = Rect2(0, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyixy"]
+atlas = ExtResource("2_lc3ti")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7rn7r"]
 animations = [{
 "frames": [{
@@ -35,14 +39,14 @@ animations = [{
 }],
 "loop": 0,
 "name": &"punch",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5vvpy")
+"texture": SubResource("AtlasTexture_7aqps")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7aqps")
+"texture": SubResource("AtlasTexture_hyixy")
 }],
 "loop": 1,
 "name": &"walk",
@@ -65,6 +69,7 @@ script = ExtResource("1_lc3ti")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2092795412]
 sprite_frames = SubResource("SpriteFrames_7rn7r")
+animation = &"punch"
 autoplay = "default"
 
 [node name="Label" type="Label" parent="." unique_id=1842232647]
@@ -102,4 +107,10 @@ scale = Vector2(0.28000045, 0.28000045)
 wait_time = 0.4
 one_shot = true
 
+[node name="Punchanimtimer" type="Timer" parent="." unique_id=704481235]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Punchanimtimer" to="." method="_on_punchanimtimer_timeout"]

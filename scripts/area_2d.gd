@@ -8,7 +8,8 @@ func _process(_delta):
 	var enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() >= 0:
 		$Fuckingcirlce.modulate = Color(255.014, 0.0, 0.0, 0.196)
-		if (Input.is_action_pressed("punch") and cooldown == false):
+		if (Input.is_action_pressed("punch") and cooldown == false) and !get_tree().paused:
+			$CollisionShape2D/AnimatedSprite2D.play("swoon")
 			cooldown = true
 			$Cooldownpunch.start()
 			joey.is_punch = true
@@ -33,3 +34,4 @@ func _on_timer_timeout() -> void:
 	print("shitat")
 	cooldown = false
 	joey.is_punch = false
+	

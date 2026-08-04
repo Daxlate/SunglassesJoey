@@ -2,8 +2,8 @@ extends CharacterBody2D
 var is_punch = false
 var is_gun = false
 var speed = 150
-var gun_knockback = -100
-var punch_knockback = -800
+var gun_knockback = -20
+var punch_knockback = -150
 var cooldown = false
 var upgrades = [false, false, false, false, false, false]
 var gun_attack = 5
@@ -43,7 +43,9 @@ func _physics_process(_delta):
 	velocity = direction * speed
 	move_and_slide()
 	if is_punch:
-		Punchanim()
+		if $AnimatedSprite2D.animation != "punch":
+			$AnimatedSprite2D.play("punch")
+			
 	else:
 		if velocity.length() > 0.0:
 			Walkanim()

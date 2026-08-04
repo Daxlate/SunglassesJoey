@@ -11,6 +11,8 @@ var in_punch_range = false
 var health = 10.0
 var gun_knockback = false
 var punch_knockback = false
+var knocked_back = false
+var knockback_resistance = 1.5
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
@@ -32,21 +34,26 @@ func _physics_process(delta):
 			Punch_cooldown = 0.5
 			
 	else:
-		walk_anim()
-		in_punch_range = false
-		Punch_cooldown = 0.0
-		velocity = direction * 70
 		
-	if gun_knockback:
-		velocity = direction * player.gun_knockback
-		gun_knockback = false
+		if !knocked_back:
+			walk_anim()
+			in_punch_range = false
+			Punch_cooldown = 0.0
+			velocity = direction * 70
+		else:
+				
+				if gun_knockback:
+					$knockedtime.start()
+					velocity = direction * player.gun_knockback * knockback_resistance
+					gun_knockback = false
 	
-	if punch_knockback:
-		velocity = direction * player.punch_knockback
-		punch_knockback = false
+				if punch_knockback:
+					$knockedtime.start()
+					velocity = direction * player.punch_knockback * knockback_resistance
+					punch_knockback = false
 	
 	move_and_slide()
-
+	
 
 func take_gun_damage():
 	$AnimationPlayer.play("Hurt")
@@ -55,6 +62,8 @@ func take_gun_damage():
 		if The_timer.has_method("change_time"):
 			The_timer.change_time(3)
 		queue_free()
+		
+	
 
 func take_punch_damage():
 	$AnimationPlayer.play("Hurt")
@@ -66,12 +75,17 @@ func take_punch_damage():
 
 	
 func Took_gun_Knockback():
+	knocked_back = true
 	gun_knockback = true
 	
 func Took_punch_Knockback():
+	knocked_back = true
 	punch_knockback = true
 
 func punch_anim():
 	$AnimatedSprite2D.play("Punch")
 func walk_anim():
 	$AnimatedSprite2D.play("default")
+
+func _on_knockedtime_timeout() -> void:
+	knocked_back = false

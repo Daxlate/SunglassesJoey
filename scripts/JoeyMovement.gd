@@ -62,6 +62,14 @@ func take_damage(enemy_dmg):
 		if The_timer.has_method("change_time"):
 				The_timer.change_time(enemy_dmg)
 		print("ouch")
+		damage_indicator(enemy_dmg)
 
 func _on_timer_timeout() -> void:
 	cooldown = false
+
+func damage_indicator(damage: int):
+	const DAMAGELABEL = preload("res://scenes/DamageAnnotation.tscn")
+	var new_label = DAMAGELABEL.instantiate()
+	new_label.global_position = global_position
+	new_label.text = str(damage)
+	get_tree().current_scene.add_child(new_label)

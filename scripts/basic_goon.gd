@@ -51,6 +51,7 @@ func _physics_process(delta):
 func take_gun_damage():
 	$AnimationPlayer.play("Hurt")
 	health -= player.gun_attack
+	damage_indicator(player.gun_attack)
 	if health <= 0:
 		if The_timer.has_method("change_time"):
 			The_timer.change_time(3)
@@ -59,6 +60,7 @@ func take_gun_damage():
 func take_punch_damage():
 	$AnimationPlayer.play("Hurt")
 	health -= player.punch_attack
+	damage_indicator(player.punch_attack)
 	if health <= 0:
 		if The_timer.has_method("change_time"):
 			The_timer.change_time(3)
@@ -75,3 +77,10 @@ func punch_anim():
 	$AnimatedSprite2D.play("Punch")
 func walk_anim():
 	$AnimatedSprite2D.play("default")
+	
+func damage_indicator(damage: int):
+	const DAMAGELABEL = preload("res://scenes/DamageAnnotation.tscn")
+	var new_label = DAMAGELABEL.instantiate()
+	new_label.global_position = global_position
+	new_label.text = str(damage)
+	get_tree().current_scene.add_child(new_label)

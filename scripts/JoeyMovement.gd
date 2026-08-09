@@ -24,7 +24,7 @@ func _process(_delta):
 	$Crosshair.scale = Vector2(0.3,0.3)
 	$Crosshair.position = final_vector
 	$Crosshair/CollisionShape2D.global_rotation = angle_to_mouse
-	if (Input.is_action_just_pressed("shoot") && cooldown == false && get_tree().paused == false):
+	if (Input.is_action_pressed("shoot") && cooldown == false && get_tree().paused == false):
 		cooldown = true
 		shoot(usable_angle)
 		if upgrades[5] == true:

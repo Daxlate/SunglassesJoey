@@ -80,7 +80,7 @@ func generate_upgrade(which: int):
 			while (upgrade1 == randomupgrade):
 				randomupgrade = randi_range(0,1)
 	var upgradebutton = get_node("%Upgrade" + str(which))
-	randomupgrade = 7
+	#randomupgrade = 7
 	upgradebutton.Upgrade = randomupgrade
 	generated_upgrade = true
 

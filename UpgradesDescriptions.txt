@@ -4,3 +4,4 @@ Make the cooldown between bullets less
 Gives you better knockback
 Make your bullets stronger
 Makes you shoot three bullets at once
+Increases your likelyhood to hit a critical hit

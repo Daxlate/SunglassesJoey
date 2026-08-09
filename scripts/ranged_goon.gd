@@ -45,8 +45,12 @@ func _physics_process(delta):
 	
 func take_gun_damage():
 	$AnimationPlayer.play("Hurt")
-	health -= player.gun_attack
-	damage_indicator(player.gun_attack)
+	if (randf() <= player.crit_chance):
+		health -= player.gun_attack * 2
+		damage_indicator(player.gun_attack * 2, true)
+	else:
+		health -= player.gun_attack
+		damage_indicator(player.gun_attack)
 	if health <= 0:
 		if The_timer.has_method("change_time"):
 			The_timer.change_time(3)
@@ -81,11 +85,14 @@ func _on_timer_timeout() -> void:
 	if self in limit.get_overlapping_bodies():
 		shoot()
 
-func damage_indicator(damage: int):
+func damage_indicator(damage: int, crit=false):
 	const DAMAGELABEL = preload("res://scenes/DamageAnnotation.tscn")
 	var new_label = DAMAGELABEL.instantiate()
 	new_label.global_position = global_position
 	new_label.text = str(damage)
+	if crit:
+		new_label.blue = 0.0
+		new_label.text = str(damage) + "!"
 	get_tree().current_scene.add_child(new_label)
 
 func _on_knockedtime_timeout() -> void:

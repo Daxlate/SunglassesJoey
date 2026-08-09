@@ -4,3 +4,4 @@ Cooldown lower
 More Knockback
 Gun Attack Boost
 Triple Weilding
+Crit increase

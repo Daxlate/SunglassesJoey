@@ -5,11 +5,12 @@ var speed = 150
 var gun_knockback = -20
 var punch_knockback = -150
 var cooldown = false
-var upgrades = [false, false, false, false, false, false, false]
+var upgrades = [false, false, false, false, false, false, false, false]
 var gun_attack = 5
 var punch_attack = 2.5
 var test = 0
 var crit_chance: float = 0.0
+var punch_cd = 1
 @onready var Crosshair = $Crosshair/Marker2D
 @onready var cooltime = $Timer.wait_time
 @onready var The_timer = get_node_or_null("/root/Mainscene/Thetimer")
@@ -46,7 +47,8 @@ func _physics_process(_delta):
 	if is_punch:
 		if $AnimatedSprite2D.animation != "punch":
 			$AnimatedSprite2D.play("punch")
-			
+			await get_tree().create_timer(punch_cd).timeout
+			is_punch = false
 	else:
 		if velocity.length() > 0.0:
 			Walkanim()

@@ -10,6 +10,9 @@
 [node name="ExtraEffects" parent="." index="0" unique_id=509498160]
 frame_progress = 0.0
 
+[node name="CollisionShape2D" parent="." index="1" unique_id=845054626]
+scale = Vector2(2, 2)
+
 [node name="Label" parent="." index="2" unique_id=1146261009]
 offset_left = 16.0
 offset_top = 16.0
@@ -19,6 +22,10 @@ theme_override_font_sizes/font_size = 16
 
 [node name="Timer" parent="." index="3" unique_id=829150403]
 wait_time = 3.0
+
+[node name="PentagramFloor" parent="CanvasLayer" parent_id_path=PackedInt32Array(1931549005) index="0" unique_id=1923559398]
+position = Vector2(0, -24)
+scale = Vector2(2, 2)
 
 [node name="LadyD" parent="." index="5" unique_id=1703405707]
 layer = 3

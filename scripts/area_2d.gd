@@ -2,6 +2,7 @@ extends Area2D
 var enemy_in_area
 var cooldown = false
 @onready var joey = get_parent()
+@onready var cd_time = joey.punch_cd
 
 func _process(_delta):
 	
@@ -11,7 +12,7 @@ func _process(_delta):
 		if (Input.is_action_pressed("punch") and cooldown == false) and !get_tree().paused:
 			$CollisionShape2D/AnimatedSprite2D.play("swoon")
 			cooldown = true
-			$Cooldownpunch.start()
+			$Cooldownpunch.start(cd_time)
 			joey.is_punch = true
 			
 			for body in enemies_in_range:

@@ -23,37 +23,66 @@ func _physics_process(delta):
 		if !in_punch_range:
 			in_punch_range = true
 			Punch_cooldown = 0.3
+		if knocked_back:
+			knockback_whilepunch(direction)
 		
 		Punch_cooldown -= delta
 		
 		if Punch_cooldown <= 0:
-			print("PUNCHED!")
-			if player.has_method("take_damage"):
-				player.take_damage(-2)
-			punch_anim()
-			Punch_cooldown = 0.5
-			
+			joey_dmg()
+		
 	else:
 		
 		if !knocked_back:
-			walk_anim()
-			in_punch_range = false
-			Punch_cooldown = 0.0
-			velocity = direction * 70
+			walk(direction)
 		else:
-				
-				if gun_knockback:
-					$knockedtime.start()
-					velocity = direction * player.gun_knockback * knockback_resistance
-					gun_knockback = false
-	
-				if punch_knockback:
-					$knockedtime.start()
-					velocity = direction * player.punch_knockback * knockback_resistance
-					punch_knockback = false
+			knockback_fromfar(direction)
 	
 	move_and_slide()
+
+
+func walk(direction):
+	walk_anim()
+	in_punch_range = false
+	Punch_cooldown = 0.0
+	velocity = direction * 70
+
+
+func knockback_whilepunch(direction):
+	if gun_knockback:
+		$knockedtime.start()
+		gun_knockback = false
 	
+	if punch_knockback:
+		$knockedtime.start()
+		punch_knockback = false
+			
+	if  !punch_knockback:
+		walk_anim()
+		velocity = direction * player.punch_knockback * knockback_resistance
+				
+	if !gun_knockback:
+		walk_anim()
+		velocity = direction * player.punch_knockback * knockback_resistance
+
+
+func knockback_fromfar(direction):
+	if gun_knockback:
+		$knockedtime.start()
+		velocity = direction * player.gun_knockback * knockback_resistance
+		gun_knockback = false
+	
+	if punch_knockback:
+		$knockedtime.start()
+		velocity = direction * player.punch_knockback * knockback_resistance
+		punch_knockback = false
+
+func joey_dmg():
+	print("PUNCHED!")
+	if player.has_method("take_damage"):
+		player.take_damage(-2)
+		punch_anim()
+		Punch_cooldown = 0.5
 
 func take_gun_damage():
 	$AnimationPlayer.play("Hurt")
@@ -63,10 +92,7 @@ func take_gun_damage():
 	else:
 		health -= player.gun_attack
 		damage_indicator(player.gun_attack)
-	if health <= 0:
-		if The_timer.has_method("change_time"):
-			The_timer.change_time(3)
-		queue_free()
+	death()
 		
 	
 
@@ -74,11 +100,10 @@ func take_punch_damage():
 	$AnimationPlayer.play("Hurt")
 	health -= player.punch_attack
 	damage_indicator(player.punch_attack)
-	if health <= 0:
-		if The_timer.has_method("change_time"):
-			The_timer.change_time(3)
-		queue_free()
+	death()
 
+
+	
 	
 func Took_gun_Knockback():
 	knocked_back = true
@@ -102,6 +127,17 @@ func damage_indicator(damage: int, crit=false):
 		new_label.blue = 0.0
 		new_label.text = str(damage) + "!"
 	get_tree().current_scene.add_child(new_label)
+	
+func death():
+	if health <= 0:
+		instansiate_orb()
+		queue_free()
+
+func instansiate_orb():
+	const TIME_ORB = preload("res://scenes/time_orb.tscn")
+	var timeorb = TIME_ORB.instantiate()
+	get_tree().current_scene.call_deferred("add_child", timeorb)
+	timeorb.global_position = global_position
 
 func _on_knockedtime_timeout() -> void:
 	knocked_back = false

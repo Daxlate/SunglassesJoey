@@ -51,20 +51,14 @@ func take_gun_damage():
 	else:
 		health -= player.gun_attack
 		damage_indicator(player.gun_attack)
-	if health <= 0:
-		if The_timer.has_method("change_time"):
-			The_timer.change_time(3)
-		queue_free()
+	death()
 		
 func take_punch_damage():
 	$AnimationPlayer.play("Hurt")
 	health -= player.punch_attack
 	damage_indicator(player.punch_attack)
-	if health <= 0:
-		if The_timer.has_method("change_time"):
-			The_timer.change_time(3)
-		queue_free()
-		
+	death()
+
 func Took_gun_Knockback():
 	knocked_back = true
 	gun_knockback = true
@@ -80,6 +74,17 @@ func shoot():
 	var direction = global_position.direction_to(player.global_position)
 	new_bullet.global_rotation = direction.angle()
 	get_tree().current_scene.add_child(new_bullet)
+
+func death():
+	if health <= 0:
+		instansiate_orb()
+		queue_free()
+
+func instansiate_orb():
+	const TIME_ORB = preload("res://scenes/time_orb.tscn")
+	var timeorb = TIME_ORB.instantiate()
+	get_tree().current_scene.call_deferred("add_child", timeorb)
+	timeorb.global_position = global_position
 
 func _on_timer_timeout() -> void:
 	if self in limit.get_overlapping_bodies():

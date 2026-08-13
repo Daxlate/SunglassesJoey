@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cabmdlahw5det" path="res://scenes/Sunglassesjoey.tscn" id="1_wtdyi"]
 [ext_resource type="PackedScene" uid="uid://bdkuo06wo2gwb" path="res://scripts/pentagramcorrect.tscn" id="3_mo382"]
 [ext_resource type="Script" uid="uid://bs86emueorrs2" path="res://scripts/thetimer.gd" id="3_nx3wj"]
+[ext_resource type="PackedScene" uid="uid://01pfwu0g8oau" path="res://scenes/time_orb.tscn" id="4_0o2or"]
 [ext_resource type="Texture2D" uid="uid://jbjlnrc6eshf" path="res://Sprites/Gameover.png" id="5_bw6rn"]
 [ext_resource type="Texture2D" uid="uid://cyoonc5mu6ac6" path="res://Sprites/QuitButton.png" id="6_jifap"]
 [ext_resource type="Script" uid="uid://ns5fb2u3ubi6" path="res://scripts/quit.gd" id="7_xl61e"]
@@ -115,6 +116,9 @@ testlabel = NodePath("../Joey/Label3")
 process_mode = 1
 wait_time = 1.2
 autostart = true
+
+[node name="Time orb" parent="Spawn Control" unique_id=508932229 instance=ExtResource("4_0o2or")]
+position = Vector2(-55, -75)
 
 [node name="Thetimer" type="Control" parent="." unique_id=1733072512 node_paths=PackedStringArray("label")]
 process_mode = 3

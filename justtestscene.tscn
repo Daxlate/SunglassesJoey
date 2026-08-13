@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://ijtooe4f170y"]
 
 [ext_resource type="PackedScene" uid="uid://cabmdlahw5det" path="res://scenes/Sunglassesjoey.tscn" id="1_8ywff"]
+[ext_resource type="PackedScene" uid="uid://01pfwu0g8oau" path="res://scenes/time_orb.tscn" id="2_qqavp"]
 
 [node name="Justtestscene" type="Node2D" unique_id=104565736]
 
 [node name="Joey" parent="." unique_id=1516984231 instance=ExtResource("1_8ywff")]
 position = Vector2(516, 261)
+
+[node name="Time orb" parent="." unique_id=508932229 instance=ExtResource("2_qqavp")]
+position = Vector2(459, 301)

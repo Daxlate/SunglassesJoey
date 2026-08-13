@@ -91,7 +91,7 @@ func _on_upgrade_pressed(source: BaseButton) -> void:
 		if (joey != null):
 			match (source.Upgrade):
 				0:
-					joey.speed += 100
+					joey.speed += 40
 				1:
 					joey.punch_attack += 3 
 				2:

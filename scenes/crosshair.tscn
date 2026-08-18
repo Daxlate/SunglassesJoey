@@ -64,9 +64,10 @@ scale = Vector2(0.34261143, 0.4269977)
 sprite_frames = SubResource("SpriteFrames_al4r6")
 animation = &"swoon"
 autoplay = "default"
+frame = 3
+frame_progress = 1.0
 
 [node name="Fuckingcirlce" type="Sprite2D" parent="." unique_id=706326139]
-visible = false
 modulate = Color(1, 1, 1, 0.19607843)
 position = Vector2(0, -1)
 scale = Vector2(4.6020975, 4.6020975)

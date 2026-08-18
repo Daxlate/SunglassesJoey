@@ -11,12 +11,14 @@ var punch_attack = 2.5
 var test = 0
 var crit_chance: float = 0.0
 var punch_cd = 1
+@onready var pickup_size = $pickupradius/CollisionShape2D
 @onready var Crosshair = $Crosshair/Marker2D
 @onready var cooltime = $Timer.wait_time
 @onready var The_timer = get_node_or_null("/root/Mainscene/Thetimer")
 
 func _process(_delta):
-	$Label.text = str(crit_chance)
+	
+	$Label.text = str(pickup_size)
 	var gun_position = Vector2(1, 1)
 	var angle_to_mouse = gun_position.angle_to_point(get_local_mouse_position())
 	var usable_angle = rad_to_deg(angle_to_mouse)

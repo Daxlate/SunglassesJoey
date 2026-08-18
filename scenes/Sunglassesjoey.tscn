@@ -66,6 +66,9 @@ radius = 23.409399
 [sub_resource type="CircleShape2D" id="CircleShape2D_al4r6"]
 radius = 133.03383
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_blp2g"]
+radius = 27.073973
+
 [node name="Joey" type="CharacterBody2D" unique_id=1516984231]
 collision_mask = 4
 script = ExtResource("1_lc3ti")
@@ -115,6 +118,14 @@ debug_color = Color(0.5936958, 0.53912836, 0.24250558, 0.05490196)
 scale = Vector2(0.28000045, 0.28000045)
 
 [node name="Marker2D" type="Marker2D" parent="Crosshair" unique_id=777269550]
+
+[node name="pickupradius" type="Area2D" parent="." unique_id=1009630244]
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupradius" unique_id=880057270]
+shape = SubResource("CircleShape2D_blp2g")
+debug_color = Color(0.5551552, 0.48539102, 0.7527315, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." unique_id=1481797899]
 wait_time = 0.4

@@ -79,7 +79,7 @@ rotation = 3.1414392
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Up_boundary" unique_id=142056779]
-position = Vector2(0, 371)
+position = Vector2(-0.08087033, 527)
 shape = SubResource("WorldBoundaryShape2D_golqe")
 
 [node name="Left_boundary" type="StaticBody2D" parent="Boundaries" unique_id=104401995]
@@ -88,14 +88,14 @@ rotation = 1.5702587
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left_boundary" unique_id=727263432]
-position = Vector2(-0.095691025, 177.99992)
+position = Vector2(8.791952, 387.00473)
 shape = SubResource("WorldBoundaryShape2D_golqe")
 
 [node name="Down_boundary" type="StaticBody2D" parent="Boundaries" unique_id=471552081]
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Down_boundary" unique_id=489216816]
-position = Vector2(0, 371)
+position = Vector2(4, 512)
 shape = SubResource("WorldBoundaryShape2D_golqe")
 
 [node name="Right_boundary" type="StaticBody2D" parent="Boundaries" unique_id=1387181058]
@@ -104,7 +104,7 @@ rotation = -1.5734545
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right_boundary" unique_id=1466780106]
-position = Vector2(0.48962814, 192.002)
+position = Vector2(-1.2174413, 457.99835)
 shape = SubResource("WorldBoundaryShape2D_golqe")
 
 [node name="Spawn Control" type="Node2D" parent="." unique_id=345390515 node_paths=PackedStringArray("Wavetimer", "testlabel")]

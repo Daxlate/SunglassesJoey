@@ -24,7 +24,7 @@ theme_override_font_sizes/font_size = 16
 wait_time = 3.0
 
 [node name="PentagramFloor" parent="CanvasLayer" parent_id_path=PackedInt32Array(1931549005) index="0" unique_id=1923559398]
-z_index = -1
+z_index = 1
 position = Vector2(0, -24)
 scale = Vector2(2, 2)
 

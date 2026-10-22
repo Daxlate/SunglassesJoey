@@ -113,5 +113,6 @@ func _on_upgrade_pressed(source: BaseButton) -> void:
 					joey.upgrades[5] += -1
 				6:
 					joey.crit_chance += 0.15
+					joey.upgrades[6] += -1
 				7:
 					joey.punch_cd = joey.punch_cd * 0.75

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dlo2686ko1pw4" path="res://Sprites/JoeyBullet.png" id="1_6t6j3"]
 [ext_resource type="Script" uid="uid://bev5jfdntmiia" path="res://scripts/joey_bullet.gd" id="1_y3ntl"]
+[ext_resource type="AudioStream" uid="uid://nurjhguhyysd" path="res://sounds/hurtenemy.wav" id="3_gobwf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_al4r6"]
 radius = 4.0
@@ -19,5 +20,9 @@ shape = SubResource("CircleShape2D_al4r6")
 [node name="JoeyBullet" type="Sprite2D" parent="." unique_id=2142832566]
 position = Vector2(-2, 0)
 texture = ExtResource("1_6t6j3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1294344834]
+stream = ExtResource("3_gobwf")
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

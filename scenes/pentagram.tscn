@@ -6,6 +6,86 @@
 [ext_resource type="Texture2D" uid="uid://dlywpl0nm0gcb" path="res://Sprites/Pentagram-Sheet1.png" id="3_lph2h"]
 [ext_resource type="Texture2D" uid="uid://c7u60na13b3ag" path="res://Sprites/Lady_D-Sheet.png" id="5_7rtp2"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kh5iw"]
+radius = 14.0
+height = 54.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hdwv"]
+atlas = ExtResource("3_lph2h")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo636"]
+atlas = ExtResource("3_lph2h")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj3vo"]
+atlas = ExtResource("3_lph2h")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go1yi"]
+atlas = ExtResource("3_lph2h")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p346"]
+atlas = ExtResource("3_lph2h")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvsmw"]
+atlas = ExtResource("1_q67eb")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaf5u"]
+atlas = ExtResource("1_q67eb")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5bk5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hdwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lo636")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_6hdwv")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_jj3vo")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_go1yi")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_4p346")
+}, {
+"duration": 1.25,
+"texture": SubResource("AtlasTexture_go1yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jj3vo")
+}],
+"loop": 0,
+"name": &"LightUp",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvsmw")
+}],
+"loop": 0,
+"name": &"Off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaf5u")
+}],
+"loop": 0,
+"name": &"On",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qvwev"]
 atlas = ExtResource("2_7rtp2")
 region = Rect2(0, 0, 64, 64)
@@ -85,86 +165,6 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Off",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kh5iw"]
-radius = 14.0
-height = 54.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6hdwv"]
-atlas = ExtResource("3_lph2h")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lo636"]
-atlas = ExtResource("3_lph2h")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jj3vo"]
-atlas = ExtResource("3_lph2h")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_go1yi"]
-atlas = ExtResource("3_lph2h")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4p346"]
-atlas = ExtResource("3_lph2h")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pvsmw"]
-atlas = ExtResource("1_q67eb")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yaf5u"]
-atlas = ExtResource("1_q67eb")
-region = Rect2(64, 128, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_u5bk5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6hdwv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lo636")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_6hdwv")
-}, {
-"duration": 1.25,
-"texture": SubResource("AtlasTexture_jj3vo")
-}, {
-"duration": 1.25,
-"texture": SubResource("AtlasTexture_go1yi")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_4p346")
-}, {
-"duration": 1.25,
-"texture": SubResource("AtlasTexture_go1yi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jj3vo")
-}],
-"loop": 0,
-"name": &"LightUp",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pvsmw")
-}],
-"loop": 0,
-"name": &"Off",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yaf5u")
-}],
-"loop": 0,
-"name": &"On",
 "speed": 5.0
 }]
 
@@ -264,13 +264,6 @@ animations = [{
 collision_layer = 0
 script = ExtResource("1_lll41")
 
-[node name="ExtraEffects" type="AnimatedSprite2D" parent="." unique_id=509498160]
-unique_name_in_owner = true
-position = Vector2(1, -12)
-sprite_frames = SubResource("SpriteFrames_kddjp")
-animation = &"Animation"
-frame_progress = 0.41197014
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=845054626]
 position = Vector2(0, 2)
 rotation = 1.5707964
@@ -288,16 +281,25 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1931549005]
-layer = -1
-follow_viewport_enabled = true
-
-[node name="PentagramFloor" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1923559398]
+[node name="PentagramFloor" type="AnimatedSprite2D" parent="." unique_id=1923559398]
 unique_name_in_owner = true
 position = Vector2(1, -12)
 sprite_frames = SubResource("SpriteFrames_u5bk5")
 animation = &"Off"
 autoplay = "Off"
+frame_progress = 1.0
+
+[node name="ExtraEffects" type="AnimatedSprite2D" parent="." unique_id=509498160]
+unique_name_in_owner = true
+position = Vector2(1, -12)
+sprite_frames = SubResource("SpriteFrames_kddjp")
+animation = &"Animation"
+frame = 9
+frame_progress = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1931549005]
+layer = -1
+follow_viewport_enabled = true
 
 [node name="LadyD" type="CanvasLayer" parent="." unique_id=1703405707]
 visible = false
@@ -317,6 +319,6 @@ frame_progress = 0.96112627
 
 [connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
 [connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]
-[connection signal="animation_finished" from="ExtraEffects" to="." method="_on_extra_effects_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="animation_finished" from="CanvasLayer/PentagramFloor" to="." method="_on_pentagram_floor_animation_finished"]
+[connection signal="animation_finished" from="PentagramFloor" to="." method="_on_pentagram_floor_animation_finished"]
+[connection signal="animation_finished" from="ExtraEffects" to="." method="_on_extra_effects_animation_finished"]

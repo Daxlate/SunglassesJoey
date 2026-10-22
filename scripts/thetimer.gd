@@ -5,6 +5,7 @@ signal timer_finished
 var time_left = 30.0
 var auto_start:= true
 var running: bool = false
+var clockamount: Array
 
 func _ready():
 	start()
@@ -36,17 +37,31 @@ func change_time(amount):
 	label.text = str(time_left)
 	
 func _update_label() -> void:
-	#if label:
-		#var minutes := int(time_left) / 60
-		#var seconds := int(time_left) % 60
-		#label.text = "%02d:%02d" % [minutes, seconds]
-	var minutes: float = time_left/60
+	var minutes = int(time_left/60)
 	var seconds = int(time_left)%60
-	#for i in range(int(minutes)):
-		#print("A MINUTE")
-	%ClockTexture.value = seconds
+	if (int(minutes) == clockamount.size()):
+		pass
+	elif (int(minutes) > clockamount.size()):
+		bgclockmake()
+	elif (int(minutes) < clockamount.size()):
+		bgclockbreak()
 
-	if time_left < 10:
-		%ClockTexture.modulate = Color(0.502, 0.0, 0.0, 1.0)
-	else:
-		%ClockTexture.modulate =  Color(1.0, 1.0, 1.0, 1.0)
+	if %ClockTexture:
+		%ClockTexture.value = seconds
+		if time_left < 10:
+			%ClockTexture.modulate = Color(0.502, 0.0, 0.0, 1.0)
+		else:
+			%ClockTexture.modulate =  Color(1.0, 1.0, 1.0, 1.0)
+
+func bgclockmake() -> void:
+	const bgclock = preload("res://scenes/bgclock.tscn")
+	var new_bgclock = bgclock.instantiate()
+	new_bgclock.global_position = Vector2(((clockamount.size() * -15) -15),0)
+	new_bgclock.z_index = -3 - clockamount.size()
+	%ClockTexture.add_child(new_bgclock)
+	clockamount.append(new_bgclock)
+
+func bgclockbreak() -> void:
+	var clock_to_delete = clockamount.back()
+	if clock_to_delete:
+		clock_to_delete.queue_free()

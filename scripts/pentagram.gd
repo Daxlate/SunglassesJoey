@@ -6,14 +6,23 @@ var upgrade1 = null
 var upgrade2 = null
 var times = 0
 var vis = false
+var json
 var test
+
+func _ready() -> void:
+	loadjson()
+
+func loadjson():
+	var jsonfilepath = "res://upgrades.json"
+	var json_as_text = FileAccess.get_file_as_string(jsonfilepath)
+	json = JSON.parse_string(json_as_text)
+	print(json.size())
 
 func _process(_delta):
 	%PentagramFloor.position = position
 	%ExtraEffects.position = position + Vector2(1, -12)
 	var OverlappingBody = get_overlapping_bodies()
-	test = OverlappingBody.size()
-	$Label.text = str(test)
+	#$Label.text = str(test)
 	get_tree().paused = false
 	Everythingvisibility(false)
 	if OverlappingBody.size() > 0:
@@ -28,9 +37,7 @@ func _process(_delta):
 			%Upgrade1.Update()
 			%Upgrade2.Update()
 			$LadyD/AnimatedSprite2D.play("LadyD")
-	#else:
-		#if joey != null:
-			#joey.test = false
+
 func Everythingvisibility(state: bool):
 	$LadyD/ColorRect.visible = state
 	$LadyD/AnimatedSprite2D.visible = state
@@ -70,7 +77,8 @@ func _on_extra_effects_animation_finished():
 
 func generate_upgrade(which: int):
 	times += 1
-	var randomupgrade = randi_range(0,7)
+	print(str(json.size()-1))
+	var randomupgrade = randi_range(0,(json.size()-1))
 	if (joey.upgrades.count(false) > 1):
 		while (joey.upgrades[randomupgrade]):
 			randomupgrade = randi_range(0,1)
@@ -80,7 +88,7 @@ func generate_upgrade(which: int):
 			while (upgrade1 == randomupgrade):
 				randomupgrade = randi_range(0,1)
 	var upgradebutton = get_node("%Upgrade" + str(which))
-	#randomupgrade = 7
+	#randomupgrade = 0
 	upgradebutton.Upgrade = randomupgrade
 	generated_upgrade = true
 

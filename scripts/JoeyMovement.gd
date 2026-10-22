@@ -18,7 +18,7 @@ var punch_cd = 1
 
 func _process(_delta):
 	
-	$Label.text = str(pickup_size)
+	$Label.text = str(speed)
 	var gun_position = Vector2(1, 1)
 	var angle_to_mouse = gun_position.angle_to_point(get_local_mouse_position())
 	var usable_angle = rad_to_deg(angle_to_mouse)

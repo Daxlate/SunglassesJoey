@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "name": "Speed Boost",
+    "description": "Make yourself faster",
+    "flavor text": "try and figure it out"
+  },
+  {
+    "id": 1,
+    "name": "Punch Attack Boost",
+    "description": "Make your punches stronger",
+    "flavor text": "try and figure it out"
+  },
+    {
+    "id": 2,
+    "name": "Cooldown lower",
+    "description": "Make your punches stronger",
+    "flavor text": "try and figure it out"
+  },
+    {
+    "id": 3,
+    "name": "More Knockback",
+    "description": "Make your punches stronger",
+    "flavor text": "try and figure it out"
+  },
+    {
+    "id": 4,
+    "name": "Gun Attack Boost",
+    "description": "Make your punches stronger",
+    "flavor text": "try and figure it out"
+  },
+    {
+    "id": 5,
+    "name": "Triple Weilding",
+    "description": "Make your punches stronger",
+    "flavor text": "try and figure it out"
+  },
+    {
+    "id": 6,
+    "name": "Crit increase",
+    "description": "Make your punches stronger",
+    "flavor text": "try and figure it out"
+  },
+    {
+    "id": 7,
+    "name": "Not a reference",
+    "description": "Make your punches stronger",
+    "flavor text": "try and figure it out"
+  }
+]

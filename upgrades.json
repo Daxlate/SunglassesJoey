@@ -14,37 +14,37 @@
     {
     "id": 2,
     "name": "Cooldown lower",
-    "description": "Make your punches stronger",
+    "description": "Make the cooldown between bullets less",
     "flavor text": "try and figure it out"
   },
     {
     "id": 3,
     "name": "More Knockback",
-    "description": "Make your punches stronger",
+    "description": "Gives you better knockback",
     "flavor text": "try and figure it out"
   },
     {
     "id": 4,
     "name": "Gun Attack Boost",
-    "description": "Make your punches stronger",
+    "description": "Make your bullets stronger",
     "flavor text": "try and figure it out"
   },
     {
     "id": 5,
-    "name": "Triple Weilding",
-    "description": "Make your punches stronger",
+    "name": "Trigger happy",
+    "description": "Gives you two extra shots",
     "flavor text": "try and figure it out"
   },
     {
     "id": 6,
     "name": "Crit increase",
-    "description": "Make your punches stronger",
+    "description": "Increases your likelyhood to hit a critical hit",
     "flavor text": "try and figure it out"
   },
     {
     "id": 7,
     "name": "Not a reference",
-    "description": "Make your punches stronger",
+    "description": "Makes your punches faster",
     "flavor text": "try and figure it out"
   }
 ]

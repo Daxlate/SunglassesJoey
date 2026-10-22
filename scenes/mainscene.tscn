@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bdkuo06wo2gwb" path="res://scripts/pentagramcorrect.tscn" id="3_mo382"]
 [ext_resource type="Script" uid="uid://bs86emueorrs2" path="res://scripts/thetimer.gd" id="3_nx3wj"]
 [ext_resource type="PackedScene" uid="uid://01pfwu0g8oau" path="res://scenes/time_orb.tscn" id="4_0o2or"]
-[ext_resource type="PackedScene" uid="uid://pg3pin017cqh" path="res://scenes/game_over.tscn" id="6_bw6rn"]
+[ext_resource type="PackedScene" uid="uid://cak6cysgmeemk" path="res://scenes/main_menu.tscn" id="6_bw6rn"]
 [ext_resource type="Texture2D" uid="uid://c0xt046r3ihmc" path="res://Sprites/Clock2.png" id="10_xl61e"]
 [ext_resource type="Texture2D" uid="uid://c6p06inn851qw" path="res://Sprites/Clock1.png" id="11_0o2or"]
 [ext_resource type="Texture2D" uid="uid://bglp4lmapwspd" path="res://Sprites/placeholdertilemap.png" id="13_457mv"]

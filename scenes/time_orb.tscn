@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byl5ie68uvhxy" path="res://scripts/time_orb.gd" id="1_l1fcv"]
 [ext_resource type="Texture2D" uid="uid://bh4p3jp5ff8k6" path="res://Sprites/timeorb2.png" id="1_oklb4"]
+[ext_resource type="Texture2D" uid="uid://dmfosd3ax4t8i" path="res://Sprites/timeorbshadow.png" id="2_j0wys"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y3nnc"]
 animations = [{
@@ -18,6 +19,11 @@ animations = [{
 
 [node name="Time orb" type="Node2D" unique_id=508932229]
 script = ExtResource("1_l1fcv")
+
+[node name="Timeorbshadow" type="Sprite2D" parent="." unique_id=528328319]
+z_index = -1
+position = Vector2(0, 9)
+texture = ExtResource("2_j0wys")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1943556453]
 sprite_frames = SubResource("SpriteFrames_y3nnc")

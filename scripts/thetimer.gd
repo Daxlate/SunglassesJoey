@@ -45,7 +45,6 @@ func _update_label() -> void:
 		bgclockmake()
 	elif (int(minutes) < clockamount.size()):
 		bgclockbreak()
-
 	if %ClockTexture:
 		%ClockTexture.value = seconds
 		if time_left < 10:
@@ -56,8 +55,8 @@ func _update_label() -> void:
 func bgclockmake() -> void:
 	const bgclock = preload("res://scenes/bgclock.tscn")
 	var new_bgclock = bgclock.instantiate()
-	new_bgclock.global_position = Vector2(((clockamount.size() * -15) -15),0)
-	new_bgclock.z_index = -3 - clockamount.size()
+	new_bgclock.global_position = Vector2(((clockamount.size() * -15) - 15),0)
+	new_bgclock.z_index -= clockamount.size()
 	%ClockTexture.add_child(new_bgclock)
 	clockamount.append(new_bgclock)
 

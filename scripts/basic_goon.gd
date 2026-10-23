@@ -2,7 +2,7 @@ extends goon
 
 
 func _ready() -> void:
-	health = 15
+	orbamount = 3
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)

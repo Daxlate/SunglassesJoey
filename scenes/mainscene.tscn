@@ -136,6 +136,7 @@ unique_name_in_owner = true
 [node name="ClockTexture" type="TextureProgressBar" parent="Thetimer/CanvasLayer" unique_id=1952727488]
 unique_name_in_owner = true
 process_mode = 3
+z_index = 5
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

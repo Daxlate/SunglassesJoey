@@ -60,7 +60,7 @@ func instansiate_orb(orbs:int = 1):
 		const TIME_ORB = preload("res://scenes/time_orb.tscn")
 		var timeorb = TIME_ORB.instantiate()
 		get_tree().current_scene.call_deferred("add_child", timeorb)
-		timeorb.global_position = global_position
+		timeorb.global_position = global_position + Vector2(randi_range(-15,15),randi_range(-15,15))
 
 #taking damage
 func take_gun_damage():

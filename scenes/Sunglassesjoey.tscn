@@ -81,6 +81,7 @@ frame = 1
 frame_progress = 1.0
 
 [node name="Label" type="Label" parent="." unique_id=1842232647]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("6_hyixy")

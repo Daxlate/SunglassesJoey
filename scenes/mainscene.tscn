@@ -38,12 +38,14 @@ process_mode = 3
 position = Vector2(0, 85)
 
 [node name="Label3" type="Label" parent="Joey" unique_id=1519446733]
+visible = false
 offset_left = -94.0
 offset_top = -52.0
 offset_right = -54.0
 offset_bottom = -29.0
 
 [node name="Label2" type="Label" parent="Joey" unique_id=415202518]
+visible = false
 offset_left = -19.0
 offset_top = -160.0
 offset_right = 21.0

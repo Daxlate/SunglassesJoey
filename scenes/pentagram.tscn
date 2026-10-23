@@ -260,7 +260,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Pentagram" type="Area2D" unique_id=1269892955]
+[node name="Pentagram2" type="Area2D" unique_id=1269892955]
 collision_layer = 0
 script = ExtResource("1_lll41")
 
@@ -270,6 +270,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_kh5iw")
 
 [node name="Label" type="Label" parent="." unique_id=1146261009]
+visible = false
 offset_left = 27.0
 offset_top = 11.0
 offset_right = 67.0

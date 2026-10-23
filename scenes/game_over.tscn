@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://pg3pin017cqh"]
 
+<<<<<<< HEAD
+[ext_resource type="Script" uid="uid://dijrsymahc1r7" path="res://scripts/gameover_resize.gd" id="1_irg28"]
+=======
+>>>>>>> 8a0e8ce5441761f8040ae9ab28e0989ee33f5d2c
 [ext_resource type="Texture2D" uid="uid://jbjlnrc6eshf" path="res://Sprites/Gameover.png" id="1_v3hpu"]
 [ext_resource type="Texture2D" uid="uid://3fmdmxnnflam" path="res://Sprites/PlayButton.png" id="2_irg28"]
 [ext_resource type="Script" uid="uid://1en58tpa3mt7" path="res://scripts/play.gd" id="3_2jtsn"]

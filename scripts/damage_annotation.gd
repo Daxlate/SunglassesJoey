@@ -5,7 +5,7 @@ var blue = 1.0
 var actualC: Color = Color(1.0, 1.0, blue, 1.0)
 var showntext: String = "ERROR"
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	position += Vector2(0, yspeed)
 	yspeed = yspeed*1.05
 	actualC = Color(1.0, 1.0, blue, (num/100))

@@ -70,7 +70,6 @@ radius = 133.03383
 radius = 27.073973
 
 [node name="Joey" type="CharacterBody2D" unique_id=1516984231]
-z_index = 2
 collision_mask = 4
 script = ExtResource("1_lc3ti")
 
@@ -82,6 +81,7 @@ frame = 1
 frame_progress = 1.0
 
 [node name="Label" type="Label" parent="." unique_id=1842232647]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("6_hyixy")

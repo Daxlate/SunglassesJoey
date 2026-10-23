@@ -79,8 +79,8 @@ func generate_upgrade(which: int):
 	times += 1
 	print(str(json.size()-1))
 	var randomupgrade = randi_range(0,(json.size()-1))
-	if (joey.upgrades.count(false) > 1):
-		while (joey.upgrades[randomupgrade]):
+	if (joey.upgrades.count(0) > 1):
+		while (joey.upgrades[randomupgrade] == 0):
 			randomupgrade = randi_range(0,1)
 		if (upgrade1 == null):
 			upgrade1 = randomupgrade
@@ -110,8 +110,9 @@ func _on_upgrade_pressed(source: BaseButton) -> void:
 				4:
 					joey.gun_attack += 3 
 				5:
-					joey.upgrades[5] = true
+					joey.upgrades[5] += -1
 				6:
 					joey.crit_chance += 0.15
+					joey.upgrades[6] += -1
 				7:
 					joey.punch_cd = joey.punch_cd * 0.75
